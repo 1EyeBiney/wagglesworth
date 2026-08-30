@@ -11,7 +11,7 @@ description: Portraits, everyday moments, and scenes from every tale at Wagglesw
 </p>
 
 {% for cat in site.galleryCategories %}
-{% set catImages = images | selectattr("galleryCategory", "equalto", cat.id) %}
+{% set catImages = images | whereEquals("galleryCategory", cat.id) %}
 {% if catImages | length %}
 <section aria-labelledby="gallery-{{ cat.id }}-heading">
     <h2 id="gallery-{{ cat.id }}-heading">{{ cat.label }}</h2>

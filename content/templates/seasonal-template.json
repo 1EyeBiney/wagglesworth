@@ -1,0 +1,19 @@
+{
+    "_comment_READ_ME_FIRST": "IMPORTANT — read this before using this template. As of launch, site/index.njk (the front-gate page) does not yet read site/_data/seasonal.json at all: adding an entry here will NOT change anything a visitor sees until a developer wires up the front-gate template to pick an active seasonal entry and swap in its background/outfit/welcome line/animation. This template exists so the data shape is ready and agreed on ahead of that work (see DECISIONS_AND_GAPS.md, 'Not a gap: seasonal entrances'). If Barb wants a seasonal entrance built, that's a real feature request for a developer session, not something her desktop assistant can turn on by itself by editing this file.",
+
+    "id": "lowercase-hyphenated-unique-id",
+    "label": "Human-readable name, e.g. 'Winter Holidays'",
+    "active": false,
+    "_comment_active": "must stay false until the front-gate feature described above actually exists — this field is reserved for that future switch",
+    "dateRange": { "start": "MM-DD", "end": "MM-DD" },
+    "_comment_dateRange": "the month-day range this entrance would be shown, if the feature existed",
+    "backgroundImage": null,
+    "_comment_backgroundImage": "an image id from site/_data/images.json for the front-gate background",
+    "baronessOutfitImage": null,
+    "_comment_baronessOutfitImage": "an image id from site/_data/images.json showing the Baroness in a seasonal outfit — never invent an outfit or appearance detail that isn't in an actual approved image",
+    "welcomeLine": "",
+    "_comment_welcomeLine": "a seasonal front-gate welcome line in the Baroness's voice — like the regular welcome line, this must be logged in COPY_REVIEW.md for Barb's approval and never treated as canon until she approves it",
+    "animationDescription": "",
+    "_comment_animationDescription": "one gentle, describable animation only (per CLAUDE_CODE_START_HERE.txt) — must respect prefers-reduced-motion with a static fallback, and must never change navigation, labels, focus order, contrast, or layout",
+    "notes": ""
+}

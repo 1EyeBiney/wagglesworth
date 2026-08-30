@@ -11,7 +11,7 @@ permalink: /estate/
     Where would you like to go first?
 </p>
 
-{% set newest = collections.stories | selectattr("data.newestAdventure") | first %}
+{% set newest = collections.stories | firstWhereTrue("newestAdventure") %}
 {% if newest %}
 <section aria-labelledby="newest-adventure-heading" class="card" style="margin: var(--space-3) 0;">
     <h2 id="newest-adventure-heading">Newest Adventure</h2>
@@ -23,23 +23,23 @@ permalink: /estate/
 <nav aria-label="Explore the Estate">
     <div class="card-grid">
         <div class="card">
-            <h3><a href="/stories/">Stories</a></h3>
+            <h2><a href="/stories/">Stories</a></h2>
             <p>Every adventure, told in series and by category, in the order they happen.</p>
         </div>
         <div class="card">
-            <h3><a href="/residents/">Meet the Residents</a></h3>
+            <h2><a href="/residents/">Meet the Residents</a></h2>
             <p>The Baroness and her whole household, the Ladies-in-Waiting, and friends of the Estate.</p>
         </div>
         <div class="card">
-            <h3><a href="/map/">Explore the Estate</a></h3>
+            <h2><a href="/map/">Explore the Estate</a></h2>
             <p>An illustrated map of the grounds — the Rose Garden, the Hidden Ballroom, and more.</p>
         </div>
         <div class="card">
-            <h3><a href="/gallery/">Estate Gallery</a></h3>
+            <h2><a href="/gallery/">Estate Gallery</a></h2>
             <p>Portraits, everyday moments, and scenes from every tale.</p>
         </div>
         <div class="card">
-            <h3><a href="/ai-adventure/">Creating Your Own Noodles Adventure with AI</a></h3>
+            <h2><a href="/ai-adventure/">Creating Your Own Noodles Adventure with AI</a></h2>
             <p>A beginner's guide to making your own plush-character stories, with real prompts.</p>
         </div>
     </div>

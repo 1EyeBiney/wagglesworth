@@ -43,6 +43,20 @@ module.exports = function (eleventyConfig) {
         return (records || []).find(function (r) { return r.id === id; }) || null;
     });
 
+    // Nunjucks' selectattr only supports a single truthy-attribute test, not
+    // Jinja2's ("attr", "equalto", value) form - passing the extra arguments
+    // is silently ignored rather than erroring, so `images | selectattr(
+    // "galleryCategory", "equalto", cat.id)` quietly returned every image for
+    // every category (found by a design-drift review of the built site, not
+    // by any validator). These two filters replace every equality-filter use.
+    eleventyConfig.addFilter('whereEquals', function (items, key, value) {
+        return (items || []).filter(function (item) { return item[key] === value; });
+    });
+
+    eleventyConfig.addFilter('firstWhereTrue', function (items, dataKey) {
+        return (items || []).find(function (item) { return item.data && item.data[dataKey]; }) || null;
+    });
+
     eleventyConfig.addFilter('storiesForSeries', function (stories, seriesId) {
         return (stories || [])
             .filter(function (s) { return s.data.seriesId === seriesId; })

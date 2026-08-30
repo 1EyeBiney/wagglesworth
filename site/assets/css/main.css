@@ -75,6 +75,9 @@ a, button, input, select, textarea, [tabindex] {
 }
 .site-header a, .site-footer a { color: var(--cream); }
 .site-header a:visited, .site-footer a:visited { color: var(--cream); }
+.site-header :focus-visible, .site-footer :focus-visible {
+    outline-color: var(--color-focus-ring-inverse);
+}
 
 .site-header__inner, .site-footer__inner, .page-content {
     max-width: var(--max-page-width);

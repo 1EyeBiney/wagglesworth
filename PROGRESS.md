@@ -84,9 +84,10 @@ blind find-replace: 20 occurrences of "Noodleverse" across 15 story files, which
 non-negotiable public-naming rule forbids. This is not invented canon — it is the
 locked rebrand V3's own decision log already mandates — so each instance was resolved
 by hand (place-name uses became "Wagglesworth Estate," collective-family uses became
-"household"), every single substitution logged verbatim in DECISIONS_AND_GAPS.md for
-Barb to review, and the generation script asserts zero "Noodleverse" residue before
-writing a file. The repeated "restored edition" disclaimer (27 slightly-differently-
+"household"), every single substitution logged in `tools/generate-stories.js`'s
+`SUBSTITUTIONS`/`TITLE_SUBSTITUTIONS` tables (see DECISIONS_AND_GAPS.md for why the log
+lives there and not duplicated in this file), and the generation script asserts zero
+"Noodleverse" residue before writing a file. The repeated "restored edition" disclaimer (27 slightly-differently-
 worded copies) was stripped from each story body and will be stated once, clearly, on
 the Stories archive page instead.
 

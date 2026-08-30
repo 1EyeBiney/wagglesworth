@@ -1,0 +1,27 @@
+{
+    "_comment_READ_ME_FIRST": "Copy the object below into site/_data/images.json, as one more entry in the list between the square brackets. Upload the actual image file into assets/originals/ FIRST (in a sensibly named subfolder), then point sourcePath at exactly where you put it. altText must describe what is ACTUALLY VISIBLE in the picture, written by someone (or an assistant) who has actually looked at it — never leave it blank, never guess at things you can't see, never invent a scene or a character's feelings that aren't visibly shown. Do not describe anything gold/gold-colored in the image or you'll trip the site's own no-gold check for original art — if it's a real photograph or original story image that happens to include something gold, ask before adding it, since the design rule is that Wagglesworth Estate's own visual identity never uses gold.",
+
+    "id": "lowercase_underscored_unique_id",
+    "sourcePath": "assets/originals/Some_Folder/Your_Image_File.png",
+    "originalLibraryFilename": null,
+    "galleryCategory": "everyday-adventures",
+    "_comment_galleryCategory": "must be exactly one of: characters, everyday-adventures, tales-from-the-estate, special-events, behind-the-scenes",
+    "sourceType": "illustration",
+    "_comment_sourceType": "must be exactly 'illustration' or 'photo' — 'photo' means a real photograph of the actual plush toy/person, 'illustration' means AI-generated or drawn art",
+    "characters": [],
+    "storylineOrEvent": "",
+    "width": 0,
+    "height": 0,
+    "_comment_dimensions": "the actual pixel width and height of the image file — ask your assistant to check this for you if you don't know it",
+    "format": "PNG",
+    "sizeBytes": null,
+    "sha256": null,
+    "provenance": "original",
+    "_comment_provenance": "'original' for a real photo or piece of artwork Barb actually has; 'generated-stand-in' only for art generated to fill a real gap, per CLAUDE.md — ask before using this value",
+    "publicUseApproved": true,
+    "caption": "",
+    "altText": "A real, specific description of what is visible in this exact image.",
+    "altTextStatus": "described",
+    "_comment_altTextStatus": "'described' once someone (or an assistant that looked at the image) has written real alt text; never leave as a placeholder",
+    "notes": ""
+}

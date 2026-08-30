@@ -35,6 +35,20 @@ validator checks CSS custom properties, SVG fill/stroke values, and design token
 gold-family hex values — it must never scan story body text for the word "gold," or it
 will flag content that was never in violation.
 
+## Decision: "Noodleverse" substitutions — the log lives in the generator, not here
+
+The non-negotiable rename replaced 20 occurrences of "Noodleverse" across 10 of the 30
+story files (place-name uses became "Wagglesworth Estate," collective-household uses
+became "the household"). The authoritative, complete record of every substitution is the
+`SUBSTITUTIONS` and `TITLE_SUBSTITUTIONS` tables in `tools/generate-stories.js` — not a
+copy here, because the generator is the single source of truth for generated story
+content (per CLAUDE.md's rule that hand-patches to generated output must go into the
+generator instead), and a second, hand-maintained copy in this file would drift out of
+sync with it the first time either one changed. A content-fidelity review confirmed all
+10 files match their originals byte-for-byte once only the logged substitutions are
+applied — no other wording changed. (A stray line in `PROGRESS.md` previously claimed
+this log lived here "verbatim"; that line has been corrected to point here instead.)
+
 ## Decision: generated stand-in art, per Brian's explicit instruction
 
 CLAUDE_CODE_START_HERE.txt's default (Phase 3) calls for labeled placeholder frames

@@ -1,0 +1,20 @@
+{
+    "_comment_READ_ME_FIRST": "Copy the object below (everything from the opening { to the closing }, NOT including this comment line) into site/_data/residents.json, as one more entry in the list between the square brackets. Rules that always apply: do not invent appearance, personality, relationship, or biography details that weren't actually given to you — put anything uncertain in needsConfirmation instead of confirmedNotes. Never describe this character using gold/gold-plated/gold-colored anywhere in generated art. The public site is 'Wagglesworth Estate', never 'Noodleverse'.",
+
+    "id": "lowercase-hyphenated-unique-id",
+    "name": "Full Display Name",
+    "group": "main-household",
+    "_comment_group": "group must be exactly one of: main-household, ladies-in-waiting, friends-and-family, special-guest",
+    "status": "placement_to_confirm",
+    "_comment_status": "status must be exactly one of: confirmed, placement_to_confirm, asset_missing",
+    "role": "One sentence describing who they are or what they do at the Estate.",
+    "portraitImage": null,
+    "_comment_portraitImage": "an image id from site/_data/images.json, or null if there isn't a confirmed picture of them yet",
+    "galleryImages": [],
+    "confirmedNotes": [
+        "Only facts you actually know are true, each as its own short sentence."
+    ],
+    "needsConfirmation": [
+        "Anything about them that isn't nailed down yet — appearance, personality, relationships, favorite things, sayings."
+    ]
+}

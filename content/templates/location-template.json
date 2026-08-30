@@ -1,0 +1,14 @@
+{
+    "_comment_READ_ME_FIRST": "Copy the object below into site/_data/locations.json, as one more entry in the list between the square brackets. Don't invent which stories or residents belong to a location if you're not sure — leave those lists empty or short rather than guessing.",
+
+    "id": "lowercase-hyphenated-unique-id",
+    "name": "Location Name",
+    "shortDescription": "One or two sentences describing this place.",
+    "images": [],
+    "_comment_images": "a list of image ids from site/_data/images.json that show this place",
+    "associatedResidents": [],
+    "_comment_associatedResidents": "a list of resident ids (from site/_data/residents.json) who are usually found here",
+    "relatedStorySeries": [],
+    "_comment_relatedStorySeries": "a list of seriesId values (like royal-summer) for story series set at this location",
+    "notes": ""
+}

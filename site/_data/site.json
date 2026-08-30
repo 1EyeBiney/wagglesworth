@@ -11,6 +11,7 @@
         "ink": "#2B2030"
     },
     "primaryNav": [
+        { "label": "Home / Front Gates", "url": "/" },
         { "label": "Stories", "url": "/stories/" },
         { "label": "Meet the Residents", "url": "/residents/" },
         { "label": "Explore the Estate", "url": "/map/" },
