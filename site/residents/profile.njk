@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+pagination:
+    data: residents
+    size: 1
+    alias: resident
+permalink: "/residents/{{ resident.id }}/"
+---
+<article>
+    <h1>{{ resident.name }}</h1>
+    {% if resident.officialTitle and resident.officialTitle != resident.name %}<p><em>{{ resident.officialTitle }}</em></p>{% endif %}
+    {% if resident.alsoKnownAs %}<p>Also known as {{ resident.alsoKnownAs }} — see the note below.</p>{% endif %}
+
+    {% set portrait = images | byId(resident.portraitImage) %}
+    {% if portrait %}
+    <img src="/assets/img/{{ portrait.id }}-480.webp" alt="{{ portrait.altText }}" width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
+    {% endif %}
+
+    <p>{{ resident.role }}</p>
+
+    {% if resident.confirmedNotes and resident.confirmedNotes.length %}
+    <h2>What we know</h2>
+    <ul>
+        {% for note in resident.confirmedNotes %}<li>{{ note }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if resident.needsConfirmation and resident.needsConfirmation.length %}
+    <h2>Still being confirmed</h2>
+    <p class="needs-confirmation">
+        These details aren't locked down yet, so they're not shown as fact:
+    </p>
+    <ul>
+        {% for item in resident.needsConfirmation %}<li class="needs-confirmation">{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if resident.galleryImages and resident.galleryImages.length > 1 %}
+    <h2>Gallery</h2>
+    <div class="card-grid">
+        {% for imgId in resident.galleryImages %}
+        {% set img = images | byId(imgId) %}
+        {% if img and img.id != resident.portraitImage %}
+        <figure class="card">
+            <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+        </figure>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <p><a href="/residents/">← All Residents</a></p>
+</article>

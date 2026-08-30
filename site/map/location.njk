@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+pagination:
+    data: locations
+    size: 1
+    alias: location
+permalink: "/map/{{ location.id }}/"
+---
+<article>
+    <h1>{{ location.name }}</h1>
+    <p>{{ location.shortDescription }}</p>
+
+    {% if location.images and location.images.length %}
+    <div class="card-grid">
+        {% for imgId in location.images %}
+        {% set img = images | byId(imgId) %}
+        {% if img %}
+        <figure class="card">
+            <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+        </figure>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="needs-confirmation">No artwork is clearly identified for this location yet.</p>
+    {% endif %}
+
+    {% if location.associatedResidents and location.associatedResidents.length %}
+    <h2>Who you'll usually find here</h2>
+    <ul>
+        {% for rid in location.associatedResidents %}
+        {% set r = residents | byId(rid) %}
+        {% if r %}<li><a href="/residents/{{ r.id }}/">{{ r.name }}</a></li>{% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if location.relatedStorySeries and location.relatedStorySeries.length %}
+    <h2>Stories set here</h2>
+    <ul>
+        {% for sid in location.relatedStorySeries %}
+        {% for story in collections.stories | storiesForSeries(sid) %}
+        <li><a href="{{ story.url }}">{{ story.data.title }}</a></li>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <p><a href="/map/">← Explore the Estate</a></p>
+</article>

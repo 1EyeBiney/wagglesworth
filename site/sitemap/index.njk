@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Site Map
+description: Every section of Wagglesworth Estate.
+---
+<h1>Site Map</h1>
+
+<h2>Main sections</h2>
+<ul>
+    {% for item in site.primaryNav %}
+    <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Utility pages</h2>
+<ul>
+    {% for item in site.utilityNav %}
+    <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Every story</h2>
+<ul>
+    {% for story in collections.stories %}
+    <li><a href="{{ story.url }}">{{ story.data.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Every resident</h2>
+<ul>
+    {% for resident in residents %}
+    <li><a href="/residents/{{ resident.id }}/">{{ resident.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Every location</h2>
+<ul>
+    {% for loc in locations %}
+    <li><a href="/map/{{ loc.id }}/">{{ loc.name }}</a></li>
+    {% endfor %}
+</ul>

@@ -101,3 +101,46 @@ worth remembering for any future collection-derived data).
 `npx eleventy` builds clean: 33 files from 30 stories + front gates + estate landing +
 the search index. Next: the Stories archive, Residents, Map, Gallery, AI-adventure,
 About, and utility pages.
+
+## Phase 3 complete: every page type built; Phase 4 validators passing clean
+
+Built the remaining page types: the Stories archive (grouped by series then by
+category, with the "restored editions" provenance note stated once here instead of 27
+times in the story bodies, plus a story-only live search filtering on top of a fully
+keyboard-navigable list that works with no JavaScript at all); Meet the Residents
+(Baroness featured first per the design document, the other three groups below her,
+each profile a single data-driven template rather than 21 hand-written pages); Explore
+the Estate (an SVG grid map whose boxes are real semantic `<a>` hotspots, keyboard
+reachable and visibly focused, paired with a plain link list underneath so nothing
+ever depends on hitting a precise spot); the Estate Gallery grouped into the five
+required categories; Creating Your Own Noodles Adventure with AI, built from the V3
+tutorial-prompts data and the AI plan document's ten-lesson path, honestly noting that
+its Wagglesworth case-study examples are waiting on the same missing artwork logged in
+DECISIONS_AND_GAPS.md rather than faking a walkthrough it can't back up; and About,
+Accessibility, Privacy, and Site Map.
+
+Two real template bugs caught by building and inspecting rather than assuming: a page
+missing `layout: layouts/base.njk` in its front matter rendered with no site chrome at
+all (caught immediately by grepping the built output rather than trusting the
+template); and the custom `dump` filter feeding the search-index JSON template
+produced literal invalid JSON for every story with no series, because
+`JSON.stringify(undefined)` returns the JS value `undefined` rather than a string,
+which Nunjucks then silently renders as nothing — caught by actually parsing the built
+search-index.json rather than trusting that "the build succeeded" meant the output was
+valid.
+
+Wrote the seven validators CLAUDE.md requires (`tools/check.js` plus one module per
+check): broken internal links, missing alt text in built output, prohibited terms, required
+metadata, episode ordering, duplicate IDs/slugs, and a cross-reference check(added beyond the
+minimum) that catches a typo'd image or resident id before it renders as a silently
+missing picture. The prohibited-terms check itself caught a real bug in its own first
+run: it flagged `tokens.css`'s own code comments explaining the no-gold rule, because
+the word "gold" appears in the explanation of the rule. Fixed by stripping CSS/SVG
+comments before scanning, the same way the Noodleverse check already strips HTML tags
+before scanning page text — a validator that flags its own documentation is exactly as
+wrong as one that misses a real violation.
+
+`npm run build` produces a clean 72-file `_site/`; `npm run check` passes all seven
+checks clean. Next: the reviewer subagent passes (accessibility, design drift against
+V3, content fidelity), then generated stand-in art, GitHub Actions deployment, and the
+maintenance handoff.

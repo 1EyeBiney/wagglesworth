@@ -1,0 +1,13 @@
+{
+    "schemaVersion": "1.0.0",
+    "audience": "complete beginners",
+    "prompts": {
+        "character_description": "I am creating a gentle story about my plush character. Using only the details below, write a 5-sentence character description. Do not invent physical traits. Name: [NAME]. Appearance: [COLORS, EARS, EYES, CLOTHES, ACCESSORIES]. Personality: [3 TRAITS]. Favorite thing: [THING]. Relationship to other characters: [RELATIONSHIP].",
+        "story_idea": "Give me 5 small, family-friendly adventure ideas for [CHARACTER] at [PLACE]. Keep the tone [FUNNY/COZY/MYSTERIOUS]. Each idea should have a simple problem, one surprising moment, and a warm ending. Do not change the character facts I provide: [PASTE CHARACTER FACTS].",
+        "story_draft": "Write a 600-word illustrated story for complete family audiences. Title: [TITLE]. Main character facts: [FACTS]. Setting facts: [FACTS]. Plot beats: [BEGINNING / PROBLEM / DISCOVERY / ENDING]. Keep all names and appearance details consistent. Insert [ILLUSTRATION 1], [ILLUSTRATION 2], and [ILLUSTRATION 3] where pictures should appear. Do not mention AI.",
+        "image_prompt": "Create a whimsical storybook illustration of [CHARACTER], a plush [ANIMAL/TYPE] with [IMMUTABLE APPEARANCE DETAILS], in [SETTING]. Action: [ACTION]. Mood: [MOOD]. Palette: royal purple, soft pink, silver, and cream; absolutely no gold. Preserve the character's face, proportions, fur color, outfit, and accessories from the reference image. No text, watermark, extra limbs, duplicate characters, or altered accessories.",
+        "correction_prompt": "Keep everything else unchanged. Correct only these items: 1) [ERROR], 2) [ERROR], 3) [ERROR]. The character must remain [IMMUTABLE DETAILS]. Do not add new characters, text, jewelry, crowns, or gold.",
+        "alt_text": "Write concise alt text (maximum 150 characters) for this story illustration. Identify the characters, action, setting, and story-relevant mood. Do not begin with 'image of' and do not guess identities or emotions that are not visible.",
+        "continuity_check": "Compare this draft against the character facts below. List only contradictions or unsupported additions, grouped as Name, Appearance, Personality, Relationships, Setting, and Timeline. Then provide corrected replacement sentences. Facts: [PASTE BIBLE ENTRY]. Draft: [PASTE DRAFT]."
+    }
+}

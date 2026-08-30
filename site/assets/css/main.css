@@ -220,6 +220,11 @@ main { display: block; }
 /* ---------- map ---------- */
 .estate-map { position: relative; max-width: 100%; }
 .estate-map svg { width: 100%; height: auto; }
+.estate-map svg a:focus-visible rect,
+.estate-map svg a:hover rect {
+    stroke: var(--color-focus-ring);
+    stroke-width: 3px;
+}
 .estate-map__hotspots {
     list-style: none;
     margin: var(--space-3) 0 0;

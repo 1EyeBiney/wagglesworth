@@ -43,7 +43,12 @@ module.exports = function (eleventyConfig) {
     // Used only to build the story-search JSON index (site/search-index.njk).
     // A plain JSON.stringify rather than Nunjucks' own dump, so behavior
     // never depends on which Nunjucks build Eleventy happens to vendor.
-    eleventyConfig.addFilter('dump', function (obj) { return JSON.stringify(obj); });
+    // JSON.stringify(undefined) returns the JS value undefined, not a
+    // string - Nunjucks then renders that as nothing at all, which left
+    // "seriesId": , in the search index for every non-series story (found
+    // by validating the built search-index.json, not by reading the
+    // template). Coalescing to null first keeps the output valid JSON.
+    eleventyConfig.addFilter('dump', function (obj) { return JSON.stringify(obj === undefined ? null : obj); });
     eleventyConfig.addFilter('striptags', function (str) {
         return String(str || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
     });

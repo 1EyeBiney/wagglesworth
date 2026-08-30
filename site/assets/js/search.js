@@ -12,12 +12,14 @@
     document.addEventListener('DOMContentLoaded', function () {
         var form = document.getElementById('story-search-form');
         var input = document.getElementById('story-search-input');
-        var list = document.getElementById('story-search-results');
         var status = document.getElementById('story-search-status');
-        if (!form || !input || !list || !status) return;
+        if (!form || !input || !status) return;
 
+        // Story links are already on the page, grouped by series/category
+        // (design doc: title-led archive, not a separate results list) —
+        // search filters what's already there rather than replacing it.
         var index = null;
-        var items = Array.prototype.slice.call(list.querySelectorAll('[data-story-url]'));
+        var items = Array.prototype.slice.call(document.querySelectorAll('[data-story-url]'));
 
         function loadIndex() {
             if (index) return Promise.resolve(index);

@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Estate Gallery
+description: Portraits, everyday moments, and scenes from every tale at Wagglesworth Estate.
+---
+<h1>Estate Gallery</h1>
+<p>
+    Every published image, source-approved and captioned. Reference photographs of the
+    real plush characters appear in Behind-the-Scenes alongside the finished
+    illustrations they inspired.
+</p>
+
+{% for cat in site.galleryCategories %}
+{% set catImages = images | selectattr("galleryCategory", "equalto", cat.id) %}
+{% if catImages | length %}
+<section aria-labelledby="gallery-{{ cat.id }}-heading">
+    <h2 id="gallery-{{ cat.id }}-heading">{{ cat.label }}</h2>
+    <div class="card-grid">
+        {% for img in catImages %}
+        <figure class="card">
+            <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+            {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
+            {% if img.sourceType == "photo" %}<figcaption><em>Original photograph</em></figcaption>{% endif %}
+        </figure>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% endfor %}

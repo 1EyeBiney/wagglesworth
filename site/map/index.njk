@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+---
+<h1>Explore the Estate</h1>
+<p>
+    An overhead view of the grounds. Every place on the map is also listed below as a
+    plain link — you never need to click a precise spot on the picture to get where
+    you're going.
+</p>
+
+<div class="estate-map">
+    <svg viewBox="0 0 400 300" role="img" aria-labelledby="estate-map-title" aria-describedby="estate-map-desc">
+        <title id="estate-map-title">Illustrated overhead map of Wagglesworth Estate</title>
+        <desc id="estate-map-desc">A stylized grounds plan showing the Main Gates at the bottom, the Grand Ballroom and Hidden Ballroom at the center, the Rose Garden and Secret Garden to either side, the Pool and Cabana, the Baroness's Rooms, the High Tea Room, and the Grand Drawing Room.</desc>
+        <rect width="400" height="300" fill="var(--cream)" stroke="var(--silver)"/>
+        {% for loc in locations %}
+        {% set gx = (loop.index0 % 3) * 130 + 20 %}
+        {% set gy = (loop.index0 // 3) * 95 + 20 %}
+        {# Each hotspot is a real semantic link, keyboard-reachable and
+           visibly focused (design doc §5), not just a picture with a
+           separate list bolted on. #}
+        <a href="/map/{{ loc.id }}/">
+            <rect x="{{ gx }}" y="{{ gy }}" width="110" height="70" rx="8" fill="var(--soft-pink)" stroke="var(--royal-purple)" stroke-width="1.5"/>
+            <text x="{{ gx + 55 }}" y="{{ gy + 40 }}" text-anchor="middle" font-size="11" fill="var(--ink)">{{ loc.name }}</text>
+        </a>
+        {% endfor %}
+    </svg>
+</div>
+
+<ul class="estate-map__hotspots">
+    {% for loc in locations %}
+    <li><a href="/map/{{ loc.id }}/">{{ loc.name }}</a></li>
+    {% endfor %}
+</ul>
