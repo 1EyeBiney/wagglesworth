@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wagglesworth-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "_site", "-l", "8080"],
+      "port": 8080
+    }
+  ]
+}
