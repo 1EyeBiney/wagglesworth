@@ -19,7 +19,7 @@ layout: layouts/base.njk
         {# Each hotspot is a real semantic link, keyboard-reachable and
            visibly focused (design doc §5), not just a picture with a
            separate list bolted on. #}
-        <a href="/map/{{ loc.id }}/">
+        <a href="{{ ('/map/' + loc.id + '/') | url }}">
             <rect x="{{ gx }}" y="{{ gy }}" width="110" height="70" rx="8" fill="var(--soft-pink)" stroke="var(--royal-purple)" stroke-width="1.5"/>
             <text x="{{ gx + 55 }}" y="{{ gy + 40 }}" text-anchor="middle" font-size="11" fill="var(--ink)">{{ loc.name }}</text>
         </a>
@@ -29,6 +29,6 @@ layout: layouts/base.njk
 
 <ul class="estate-map__hotspots">
     {% for loc in locations %}
-    <li><a href="/map/{{ loc.id }}/">{{ loc.name }}</a></li>
+    <li><a href="{{ ('/map/' + loc.id + '/') | url }}">{{ loc.name }}</a></li>
     {% endfor %}
 </ul>

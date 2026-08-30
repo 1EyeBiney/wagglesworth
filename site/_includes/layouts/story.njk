@@ -46,13 +46,13 @@ layout: layouts/base.njk
         <ul style="list-style:none; display:flex; justify-content:space-between; padding:0;">
             <li>
                 {% if previousStory %}
-                <a href="{{ previousStory.url }}" rel="prev">← {{ previousStory.data.title }}</a>
+                <a href="{{ previousStory.url | url }}" rel="prev">← {{ previousStory.data.title }}</a>
                 {% endif %}
             </li>
-            <li><a href="/stories/">All Stories</a></li>
+            <li><a href="{{ '/stories/' | url }}">All Stories</a></li>
             <li>
                 {% if nextStory %}
-                <a href="{{ nextStory.url }}" rel="next">{{ nextStory.data.title }} →</a>
+                <a href="{{ nextStory.url | url }}" rel="next">{{ nextStory.data.title }} →</a>
                 {% endif %}
             </li>
         </ul>

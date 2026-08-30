@@ -8,34 +8,34 @@ description: Every section of Wagglesworth Estate.
 <h2>Main sections</h2>
 <ul>
     {% for item in site.primaryNav %}
-    <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+    <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
     {% endfor %}
 </ul>
 
 <h2>Utility pages</h2>
 <ul>
     {% for item in site.utilityNav %}
-    <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+    <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
     {% endfor %}
 </ul>
 
 <h2>Every story</h2>
 <ul>
     {% for story in collections.stories %}
-    <li><a href="{{ story.url }}">{{ story.data.title }}</a></li>
+    <li><a href="{{ story.url | url }}">{{ story.data.title }}</a></li>
     {% endfor %}
 </ul>
 
 <h2>Every resident</h2>
 <ul>
     {% for resident in residents %}
-    <li><a href="/residents/{{ resident.id }}/">{{ resident.name }}</a></li>
+    <li><a href="{{ ('/residents/' + resident.id + '/') | url }}">{{ resident.name }}</a></li>
     {% endfor %}
 </ul>
 
 <h2>Every location</h2>
 <ul>
     {% for loc in locations %}
-    <li><a href="/map/{{ loc.id }}/">{{ loc.name }}</a></li>
+    <li><a href="{{ ('/map/' + loc.id + '/') | url }}">{{ loc.name }}</a></li>
     {% endfor %}
 </ul>

@@ -30,7 +30,7 @@ permalink: "/map/{{ location.id }}/"
     <ul>
         {% for rid in location.associatedResidents %}
         {% set r = residents | byId(rid) %}
-        {% if r %}<li><a href="/residents/{{ r.id }}/">{{ r.name }}</a></li>{% endif %}
+        {% if r %}<li><a href="{{ ('/residents/' + r.id + '/') | url }}">{{ r.name }}</a></li>{% endif %}
         {% endfor %}
     </ul>
     {% endif %}
@@ -40,11 +40,11 @@ permalink: "/map/{{ location.id }}/"
     <ul>
         {% for sid in location.relatedStorySeries %}
         {% for story in collections.stories | storiesForSeries(sid) %}
-        <li><a href="{{ story.url }}">{{ story.data.title }}</a></li>
+        <li><a href="{{ story.url | url }}">{{ story.data.title }}</a></li>
         {% endfor %}
         {% endfor %}
     </ul>
     {% endif %}
 
-    <p><a href="/map/">← Explore the Estate</a></p>
+    <p><a href="{{ '/map/' | url }}">← Explore the Estate</a></p>
 </article>

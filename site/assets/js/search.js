@@ -23,7 +23,13 @@
 
         function loadIndex() {
             if (index) return Promise.resolve(index);
-            return fetch('/search-index.json')
+            // The site is served from a GitHub Pages project subpath
+            // (/wagglesworth/), not the domain root, so a hardcoded leading
+            // "/" here would 404 there even though it works in a plain
+            // static-file local preview. base.njk renders the real prefix
+            // onto <body data-base-path> via Eleventy's own pathPrefix.
+            var base = document.body.getAttribute('data-base-path') || '/';
+            return fetch(base + 'search-index.json')
                 .then(function (r) { return r.json(); })
                 .then(function (data) { index = data; return index; })
                 .catch(function () { return []; });

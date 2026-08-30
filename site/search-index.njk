@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 [
 {% for story in collections.stories %}{
 "title": {{ story.data.title | dump | safe }},
-"url": {{ story.url | dump | safe }},
+"url": {{ story.url | url | dump | safe }},
 "summary": {{ story.data.summary | dump | safe }},
 "seriesId": {{ story.data.seriesId | dump | safe }},
 "primaryCollection": {{ story.data.primaryCollection | dump | safe }},

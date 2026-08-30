@@ -13,7 +13,7 @@ layout: layouts/base.njk
     <img src="{{ portrait | imgSrc(480) }}" alt="{{ portrait.altText }}" width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
     {% endif %}
     <p>{{ baroness.role }}</p>
-    <p><a href="/residents/{{ baroness.id }}/">Her full profile →</a></p>
+    <p><a href="{{ ('/residents/' + baroness.id + '/') | url }}">Her full profile →</a></p>
 </section>
 {% endif %}
 
@@ -24,7 +24,7 @@ layout: layouts/base.njk
         {% for resident in residents %}
         {% if resident.group == group.id and resident.id != "baroness-wagglesworth" %}
         <div class="card">
-            <h3><a href="/residents/{{ resident.id }}/">{{ resident.name }}</a></h3>
+            <h3><a href="{{ ('/residents/' + resident.id + '/') | url }}">{{ resident.name }}</a></h3>
             {% if resident.status != "confirmed" %}<p class="needs-confirmation">Still being confirmed</p>{% endif %}
             <p>{{ resident.role }}</p>
         </div>

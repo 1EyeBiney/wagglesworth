@@ -6,7 +6,7 @@
         <nav aria-label="Footer">
             <ul class="primary-nav">
                 {% for item in site.utilityNav %}
-                <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
                 {% endfor %}
             </ul>
         </nav>

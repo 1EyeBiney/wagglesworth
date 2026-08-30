@@ -6,6 +6,17 @@
 // writes into site/assets/img/ before Eleventy runs, so it is passthrough-copied
 // like any other static asset.
 
+// This is a GitHub Pages *project* page (github.com/1EyeBiney/wagglesworth),
+// served at https://1eyebiney.github.io/wagglesworth/, not at the domain
+// root. Every internal href/src has to account for that "/wagglesworth"
+// prefix or it 404s once deployed, even though it works fine in a plain
+// static-file preview served from the output folder's own root - this bit
+// the very first Pages deploy (see PROGRESS.md/ISSUES.md). Eleventy's
+// pathPrefix + `url` filter handles this for template-generated links
+// automatically; the one raw JS string filter below (imgSrc) has to repeat
+// the same constant by hand since it isn't Nunjucks-templated.
+const PATH_PREFIX = require('./tools/path-prefix.js');
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ 'site/assets/css': 'assets/css' });
     eleventyConfig.addPassthroughCopy({ 'site/assets/js': 'assets/js' });
@@ -35,8 +46,8 @@ module.exports = function (eleventyConfig) {
     // template that shows an image asks this one function, not six.
     eleventyConfig.addFilter('imgSrc', function (img, width) {
         if (!img) return '';
-        if (img.format === 'SVG') return '/assets/img/' + img.id + '.svg';
-        return '/assets/img/' + img.id + '-' + width + '.webp';
+        if (img.format === 'SVG') return PATH_PREFIX + 'assets/img/' + img.id + '.svg';
+        return PATH_PREFIX + 'assets/img/' + img.id + '-' + width + '.webp';
     });
 
     eleventyConfig.addFilter('byId', function (records, id) {
@@ -87,6 +98,7 @@ module.exports = function (eleventyConfig) {
             data: '_data',
             output: '_site'
         },
+        pathPrefix: PATH_PREFIX,
         markdownTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
         templateFormats: ['njk', 'md', '11ty.js']

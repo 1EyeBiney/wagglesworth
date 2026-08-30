@@ -8,8 +8,8 @@
     {% if not site.goLiveToSearchEngines %}
     <meta name="robots" content="noindex, nofollow">
     {% endif %}
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 </head>
 <body>
     <a class="skip-link" href="#gate-content">Skip to main content</a>
@@ -25,7 +25,7 @@
             Estate. Wipe your paws. Mind the roses. And whatever you do, do not sit in
             my chair.
         </p>
-        <p><a class="button" href="/estate/">Enter Wagglesworth Estate</a></p>
+        <p><a class="button" href="{{ '/estate/' | url }}">Enter Wagglesworth Estate</a></p>
     </main>
 </body>
 </html>

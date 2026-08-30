@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "wagglesworth-preview",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "serve", "_site", "-l", "8080"],
-      "port": 8080
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 8080,
+      "url": "http://localhost:8080/wagglesworth/"
     }
   ]
 }

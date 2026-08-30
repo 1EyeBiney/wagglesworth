@@ -10,19 +10,19 @@
        "goLiveToSearchEngines". Do not remove without Barb's go-ahead. #}
     <meta name="robots" content="noindex, nofollow">
     {% endif %}
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 </head>
-<body>
+<body data-base-path="{{ '/' | url }}">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     {% include "partials/nav.njk" %}
     <main id="main-content" class="page-content">
         {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}
-    <script src="/assets/js/text-size.js"></script>
+    <script src="{{ '/assets/js/text-size.js' | url }}"></script>
     {% if extraScripts %}
-    {% for src in extraScripts %}<script src="{{ src }}"></script>
+    {% for src in extraScripts %}<script src="{{ src | url }}"></script>
     {% endfor %}
     {% endif %}
 </body>

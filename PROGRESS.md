@@ -179,3 +179,45 @@ noticed and fixed. Untracked with `git rm --cached` (files stay on disk, still
 rebuilt by `npm run images`); the old blobs remain in git history rather than being
 rewritten, since history-rewriting is a destructive operation outside this run's
 authority — a minor, harmless inefficiency in an otherwise small repo, not a blocker.
+
+## Session 1 continued: Phase 4 review fixes, then a real deploy-time bug
+
+Three read-only reviewer subagents (accessibility, design-drift vs. V3, content
+fidelity) ran against a locally-built `_site/`. Real findings fixed: broken Nunjucks
+`selectattr("attr","equalto",value)` calls (a Jinja2ism Nunjucks doesn't support) that
+made every Estate Gallery category show all 56 images and made the Homepage's Newest
+Adventure section never render; a heading-level skip on `/estate/`; a 1.58:1 focus-ring
+contrast failure on the purple header/footer; a missing "Home / Front Gates" nav entry;
+one image with an invalid gallery category; two documentation-accuracy corrections. See
+ISSUES.md's Done section for the full list.
+
+After pushing that commit and confirming the GitHub Actions build succeeded, checking
+the actual live URL (`https://1eyebiney.github.io/wagglesworth/`) in the browser found
+the page rendering with no CSS at all — every internal href/src (`/assets/css/main.css`,
+`/estate/`, `/stories/`, etc.) resolved against the domain root instead of the
+`/wagglesworth/` project subpath GitHub Pages actually serves this repo at, so
+everything except the raw HTML 404'd. This had been invisible up to this point because
+every check so far — `npm run build`, `npm run check`, the local `npx serve _site`
+preview, and all three reviewer subagents — served or read the built output from its
+own root, which never exposes a subpath mismatch. Only hitting the real deployed URL
+surfaced it.
+
+Fixed by setting `pathPrefix: '/wagglesworth/'` in `eleventy.config.js` (constant
+shared via `tools/path-prefix.js` so the link-checker validator can strip it back off
+before resolving a link against the physical `_site/` layout, which pathPrefix never
+moves) and switching every template's hardcoded absolute href/src, plus every
+`something.url` reference to another page's URL (Eleventy's `page.url` and any
+collection item's `.url` are deliberately *not* pathPrefix-aware on their own — only
+the `url` filter applies it), to go through `| url`. Client-side `search.js` reads the
+real prefix from a `data-base-path` attribute `base.njk` renders onto `<body>`, since a
+static JS file isn't template-processed. `tools/checks/links.js` was strengthened at
+the same time to flag any internal href/src missing the prefix as broken (previously it
+would have found the physical file at its un-prefixed path and called that fine) — this
+closes the exact blind spot that let the bug ship, so a future regression like this one
+fails `npm run check` instead of only showing up on the live site. `.claude/launch.json`
+now runs `npm start` (Eleventy's own dev server, which serves at the prefix correctly)
+instead of a raw `npx serve _site`, which no longer matches the built hrefs.
+
+Rebuilt, re-ran `npm run check` clean, pushed, watched the GitHub Actions run to
+completion, and confirmed in the browser that the live site now loads styled with
+working navigation.

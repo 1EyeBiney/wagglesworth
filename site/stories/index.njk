@@ -27,8 +27,8 @@ extraScripts: ["/assets/js/search.js"]
     <h2 id="royal-summer-heading">Royal Summer / Silver Rose Series</h2>
     <ol style="padding-left: 1.25em;">
         {% for story in collections.stories | storiesForSeries("royal-summer") %}
-        <li data-story-url="{{ story.url }}">
-            <a href="{{ story.url }}">{{ story.data.title }}</a>
+        <li data-story-url="{{ story.url | url }}">
+            <a href="{{ story.url | url }}">{{ story.data.title }}</a>
             {% if story.data.summary %} — {{ story.data.summary }}{% endif %}
         </li>
         {% endfor %}
@@ -42,8 +42,8 @@ extraScripts: ["/assets/js/search.js"]
     <h2 id="coll-{{ coll.id }}-heading">{{ coll.label }}</h2>
     <ul style="padding-left: 1.25em;">
         {% for story in collStories %}
-        <li data-story-url="{{ story.url }}">
-            <a href="{{ story.url }}">{{ story.data.title }}</a>
+        <li data-story-url="{{ story.url | url }}">
+            <a href="{{ story.url | url }}">{{ story.data.title }}</a>
             {% if story.data.summary %} — {{ story.data.summary }}{% endif %}
         </li>
         {% endfor %}
