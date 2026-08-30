@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="hs-title hs-desc">
+    <title id="hs-title">A stylized hardware store scene</title>
+    <desc id="hs-desc">A decorative illustration of a hardware store aisle: a large purple gate, shelves of tools, and stacked bags, in the Estate's royal purple, soft pink, silver, and cream palette. No characters are shown, since a hardware-store illustration for this story was never located.</desc>
+    <rect width="800" height="600" fill="#FFF8E8"/>
+    <rect x="0" y="420" width="800" height="180" fill="#E8B7CF" opacity="0.35"/>
+
+    <!-- The enormous gate -->
+    <g stroke="#5B2C83" stroke-width="10" fill="none">
+        <rect x="80" y="120" width="220" height="360" rx="6"/>
+        <line x1="80" y1="180" x2="300" y2="180"/>
+        <line x1="80" y1="300" x2="300" y2="300"/>
+        <line x1="80" y1="420" x2="300" y2="420"/>
+        <line x1="140" y1="120" x2="140" y2="480"/>
+        <line x1="240" y1="120" x2="240" y2="480"/>
+    </g>
+
+    <!-- Shelf of tools -->
+    <g stroke="#2B2030" stroke-width="6" fill="none">
+        <line x1="360" y1="180" x2="740" y2="180"/>
+        <line x1="360" y1="300" x2="740" y2="300"/>
+        <line x1="360" y1="420" x2="740" y2="420"/>
+        <line x1="360" y1="150" x2="360" y2="480"/>
+        <line x1="740" y1="150" x2="740" y2="480"/>
+    </g>
+    <!-- Wrench silhouettes -->
+    <g fill="#A7A9AC">
+        <path d="M400 220 q-18 -18 -40 0 q-10 10 0 22 l70 70 l22 -22 l-40 -40 q18 -18 0 -30 z"/>
+        <path d="M530 220 q-18 -18 -40 0 q-10 10 0 22 l70 70 l22 -22 l-40 -40 q18 -18 0 -30 z"/>
+        <path d="M660 220 q-18 -18 -40 0 q-10 10 0 22 l70 70 l22 -22 l-40 -40 q18 -18 0 -30 z"/>
+    </g>
+    <!-- Stacked bags (concrete bags) -->
+    <g fill="#5B2C83" opacity="0.85">
+        <rect x="390" y="340" width="90" height="55" rx="8"/>
+        <rect x="490" y="340" width="90" height="55" rx="8"/>
+        <rect x="590" y="340" width="90" height="55" rx="8"/>
+        <rect x="440" y="390" width="90" height="55" rx="8"/>
+        <rect x="540" y="390" width="90" height="55" rx="8"/>
+    </g>
+
+    <!-- Silver Rose motif, small and decorative in a corner -->
+    <g transform="translate(700,60) scale(0.6)" fill="#A7A9AC" opacity="0.9">
+        <circle cx="32" cy="32" r="6"/>
+        <path d="M32 26 C24 20, 18 22, 16 30 C18 24, 26 22, 32 26 Z"/>
+        <path d="M38 26 C46 20, 52 22, 54 30 C52 24, 44 22, 38 26 Z"/>
+        <path d="M26 32 C20 24, 22 18, 30 16 C24 18, 22 26, 26 32 Z"/>
+        <path d="M26 38 C20 46, 22 52, 30 54 C24 52, 22 44, 26 38 Z"/>
+        <path d="M38 38 C46 46, 52 52, 54 54 C52 48, 44 42, 38 38 Z"/>
+    </g>
+</svg>

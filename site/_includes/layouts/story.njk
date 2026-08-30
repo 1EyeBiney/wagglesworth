@@ -12,7 +12,7 @@ layout: layouts/base.njk
     {% set hero = images | byId(heroImage) %}
     {% if hero %}
     <figure>
-        <img src="/assets/img/{{ hero.id }}-960.webp" alt="{{ hero.altText }}"
+        <img src="{{ hero | imgSrc(960) }}" alt="{{ hero.altText }}"
              {% if hero.altTextStatus != 'approved' %}data-alt-status="{{ hero.altTextStatus }}"{% endif %}
              width="960" height="{{ (960 * hero.height / hero.width) | round }}">
         {% if hero.caption %}<figcaption>{{ hero.caption }}</figcaption>{% endif %}
@@ -33,7 +33,7 @@ layout: layouts/base.njk
             {% set img = images | byId(imgId) %}
             {% if img %}
             <figure class="card">
-                <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+                <img src="{{ img | imgSrc(480) }}" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
                 {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
             </figure>
             {% endif %}

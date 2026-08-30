@@ -144,3 +144,27 @@ wrong as one that misses a real violation.
 checks clean. Next: the reviewer subagent passes (accessibility, design drift against
 V3, content fidelity), then generated stand-in art, GitHub Actions deployment, and the
 maintenance handoff.
+
+## Generated stand-in art
+
+Three pieces authored, all logged in GENERATED_ART.md and marked
+`"provenance": "generated-stand-in"` in images.json: a hardware-store scene (gate and
+tools), a Queso Valentine still life (bowl, chips, hearts), and a snow-day/UNO scene
+(falling snow, a fan of cards with a rose motif in place of ordinary suits) — filling
+the three pages that would otherwise have shipped with no illustration at all.
+
+One boundary was drawn carefully before drawing anything: the character bible marks
+Queso's appearance `asset_missing` and Keady's `to confirm`, so no stand-in draws
+either of them, or any character at all — inventing a visual design for a character
+the source material never fixed one for would be exactly the gap-filling CLAUDE.md
+forbids. All three pieces are scene and object motifs only. Episode Six's own P0 gap
+was left ungenerated for a different reason: that episode already has seven real
+illustrations, so a stand-in there would not be filling a genuine absence.
+
+Wiring an SVG stand-in in place of a raster original needed one real fix: every
+template referenced images as `<id>-960.webp`/`<id>-480.webp`, which would 404 for a
+`.svg` file the pipeline copies through unchanged. Added one `imgSrc` filter
+centralizing the choice (raster width suffix vs. bare `.svg`) so every template asks
+one function instead of six templates each growing their own conditional.
+
+`npm run build` and `npm run check` both still pass clean with the new art in place.

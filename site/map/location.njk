@@ -16,7 +16,7 @@ permalink: "/map/{{ location.id }}/"
         {% set img = images | byId(imgId) %}
         {% if img %}
         <figure class="card">
-            <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+            <img src="{{ img | imgSrc(480) }}" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
         </figure>
         {% endif %}
         {% endfor %}

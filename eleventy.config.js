@@ -26,6 +26,19 @@ module.exports = function (eleventyConfig) {
     // templates do this constantly (a story's character list, a location's
     // associated residents) and a repeated Nunjucks filter loop is harder to
     // read than one filter call.
+    // The URL for an image record at a given raster width. Generated
+    // stand-in art (data/images.json "provenance": "generated-stand-in")
+    // ships as SVG and is copied through unchanged rather than rasterized -
+    // vector art doesn't need a fixed-width derivative, and a story hero
+    // image referencing "-960.webp" on a record whose real file is
+    // "<id>.svg" would otherwise 404 silently. Centralized here so every
+    // template that shows an image asks this one function, not six.
+    eleventyConfig.addFilter('imgSrc', function (img, width) {
+        if (!img) return '';
+        if (img.format === 'SVG') return '/assets/img/' + img.id + '.svg';
+        return '/assets/img/' + img.id + '-' + width + '.webp';
+    });
+
     eleventyConfig.addFilter('byId', function (records, id) {
         return (records || []).find(function (r) { return r.id === id; }) || null;
     });

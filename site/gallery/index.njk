@@ -18,7 +18,7 @@ description: Portraits, everyday moments, and scenes from every tale at Wagglesw
     <div class="card-grid">
         {% for img in catImages %}
         <figure class="card">
-            <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+            <img src="{{ img | imgSrc(480) }}" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
             {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
             {% if img.sourceType == "photo" %}<figcaption><em>Original photograph</em></figcaption>{% endif %}
         </figure>

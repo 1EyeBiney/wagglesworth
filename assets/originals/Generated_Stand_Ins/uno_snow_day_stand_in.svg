@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="us-title us-desc">
+    <title id="us-title">A snow day card-game still life</title>
+    <desc id="us-desc">A decorative snow-day illustration: falling snow, a frosted windowsill, and a fan of playing cards marked with a rose motif instead of ordinary suits, in the Estate's royal purple, soft pink, silver, and cream palette. No characters are shown, since original artwork for this story was never located.</desc>
+    <rect width="800" height="600" fill="#FFF8E8"/>
+    <rect x="0" y="0" width="800" height="380" fill="#A7A9AC" opacity="0.18"/>
+
+    <!-- Windowsill -->
+    <rect x="0" y="360" width="800" height="30" fill="#5B2C83"/>
+
+    <!-- Falling snow -->
+    <g fill="#A7A9AC">
+        <circle cx="80" cy="80" r="6"/>
+        <circle cx="200" cy="140" r="8"/>
+        <circle cx="340" cy="60" r="5"/>
+        <circle cx="460" cy="160" r="7"/>
+        <circle cx="600" cy="90" r="6"/>
+        <circle cx="720" cy="180" r="8"/>
+        <circle cx="140" cy="260" r="5"/>
+        <circle cx="620" cy="260" r="5"/>
+    </g>
+
+    <!-- Fan of cards -->
+    <g transform="translate(400,520)">
+        <g transform="rotate(-22)"><rect x="-45" y="-140" width="90" height="130" rx="8" fill="#FFF8E8" stroke="#5B2C83" stroke-width="4"/></g>
+        <g transform="rotate(-7)"><rect x="-45" y="-140" width="90" height="130" rx="8" fill="#FFF8E8" stroke="#5B2C83" stroke-width="4"/></g>
+        <g transform="rotate(8)"><rect x="-45" y="-140" width="90" height="130" rx="8" fill="#FFF8E8" stroke="#5B2C83" stroke-width="4"/></g>
+        <g transform="rotate(23)"><rect x="-45" y="-140" width="90" height="130" rx="8" fill="#FFF8E8" stroke="#5B2C83" stroke-width="4"/></g>
+        <!-- Rose-motif pips, drawn once and reused via the card angles above -->
+        <g transform="rotate(-22) translate(0,-75)" fill="#E8B7CF"><circle r="14"/></g>
+        <g transform="rotate(-7) translate(0,-75)" fill="#5B2C83"><circle r="14"/></g>
+        <g transform="rotate(8) translate(0,-75)" fill="#E8B7CF"><circle r="14"/></g>
+        <g transform="rotate(23) translate(0,-75)" fill="#5B2C83"><circle r="14"/></g>
+    </g>
+
+    <!-- Silver Rose motif -->
+    <g transform="translate(680,60) scale(0.6)" fill="#A7A9AC" opacity="0.9">
+        <circle cx="32" cy="32" r="6"/>
+        <path d="M32 26 C24 20, 18 22, 16 30 C18 24, 26 22, 32 26 Z"/>
+        <path d="M38 26 C46 20, 52 22, 54 30 C52 24, 44 22, 38 26 Z"/>
+        <path d="M26 32 C20 24, 22 18, 30 16 C24 18, 22 26, 26 32 Z"/>
+        <path d="M26 38 C20 46, 22 52, 30 54 C24 52, 22 44, 26 38 Z"/>
+        <path d="M38 38 C46 46, 52 52, 54 54 C52 48, 44 42, 38 38 Z"/>
+    </g>
+</svg>

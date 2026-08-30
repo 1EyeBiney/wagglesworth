@@ -193,6 +193,21 @@ Barb confirming which of these are real photographs of the actual plush toys ver
 AI-generated images; guessing wrongly in either direction would misstate provenance,
 which the design document treats as seriously as the no-invented-canon rule.
 
+## Decision: generated stand-ins are scenes and motifs, never new character designs
+
+Writing the actual stand-in art required one more line to be drawn precisely, beyond
+what was decided before the run started: the character bible requires appearance
+(species, fur color, face, proportions, outfit) to come only from approved reference
+images, and explicitly marks Queso's appearance as unestablished (`asset_missing`) and
+Keady's as `to confirm`. Drawing either of them — even in simple vector form — would be
+inventing a visual design for a character the source material never fixed one for,
+which is exactly the class of gap-filling CLAUDE.md forbids. So the three generated
+pieces below depict scene and object motifs only (a gate and tools, a Valentine's still
+life, a snow-day/card-game motif) and never a character's face or body. Queso's and
+Keady's resident profiles stay text-only rather than getting an invented portrait —
+that is the honest representation of "appearance not yet confirmed," not a gap to be
+papered over with art.
+
 ## Not a gap: seasonal entrances and most map-location art
 
 No seasonal-entrance package exists in either archive, and no location has dedicated

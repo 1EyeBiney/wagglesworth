@@ -13,7 +13,7 @@ permalink: "/residents/{{ resident.id }}/"
 
     {% set portrait = images | byId(resident.portraitImage) %}
     {% if portrait %}
-    <img src="/assets/img/{{ portrait.id }}-480.webp" alt="{{ portrait.altText }}" width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
+    <img src="{{ portrait | imgSrc(480) }}" alt="{{ portrait.altText }}" width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
     {% endif %}
 
     <p>{{ resident.role }}</p>
@@ -42,7 +42,7 @@ permalink: "/residents/{{ resident.id }}/"
         {% set img = images | byId(imgId) %}
         {% if img and img.id != resident.portraitImage %}
         <figure class="card">
-            <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+            <img src="{{ img | imgSrc(480) }}" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
         </figure>
         {% endif %}
         {% endfor %}

@@ -10,7 +10,7 @@ layout: layouts/base.njk
     <h2 id="featured-heading">{{ baroness.name }}</h2>
     {% set portrait = images | byId(baroness.portraitImage) %}
     {% if portrait %}
-    <img src="/assets/img/{{ portrait.id }}-480.webp" alt="{{ portrait.altText }}" width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
+    <img src="{{ portrait | imgSrc(480) }}" alt="{{ portrait.altText }}" width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
     {% endif %}
     <p>{{ baroness.role }}</p>
     <p><a href="/residents/{{ baroness.id }}/">Her full profile →</a></p>

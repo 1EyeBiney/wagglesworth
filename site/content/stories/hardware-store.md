@@ -5,6 +5,7 @@ order: 8
 primaryCollection: "everyday-adventures"
 characters: ["dad", "uncle-chris"]
 summary: "Dad, Uncle Chris, chai tea, the enormous gate, concrete bags, air vents, PA announcements, Dad's snark, beef jerky, and the pipe wrench."
+heroImage: "hardware_store_stand_in"
 permalink: "/stories/hardware-store/"
 ---
 
