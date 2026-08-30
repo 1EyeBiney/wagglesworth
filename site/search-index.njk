@@ -1,0 +1,16 @@
+---
+permalink: /search-index.json
+eleventyExcludeFromCollections: true
+---
+[
+{% for story in collections.stories %}{
+"title": {{ story.data.title | dump | safe }},
+"url": {{ story.url | dump | safe }},
+"summary": {{ story.data.summary | dump | safe }},
+"seriesId": {{ story.data.seriesId | dump | safe }},
+"primaryCollection": {{ story.data.primaryCollection | dump | safe }},
+"characters": {{ story.data.characters | dump | safe }},
+"body": {{ story.templateContent | striptags | dump | safe }}
+}{% if not loop.last %},{% endif %}
+{% endfor %}
+]

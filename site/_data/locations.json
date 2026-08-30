@@ -1,0 +1,83 @@
+[
+    {
+        "id": "main-gates",
+        "name": "Main Gates",
+        "shortDescription": "Where every visit to the Estate begins, and where the core household gathers for royal announcements.",
+        "images": ["wagglesworth_estate_royal_quartet", "royal_announcement_at_wagglesworth_manor"],
+        "associatedResidents": ["baroness-wagglesworth", "buttons", "petunia", "tilly"],
+        "relatedStorySeries": [],
+        "notes": "wagglesworth_estate_royal_quartet is captioned \"core cast at estate gates\" in the source manifest — a direct match, not a guess."
+    },
+    {
+        "id": "rose-garden",
+        "name": "Rose Garden",
+        "shortDescription": "The outdoor garden where the Ladies-in-Waiting take tea and Lady Isla sings.",
+        "images": ["lady_virginia_garden_tea"],
+        "associatedResidents": ["isla", "virginia"],
+        "relatedStorySeries": ["royal-summer"],
+        "notes": "Episode One's outdoor tea and Lady Isla's Episode Two song are both set here per the story text; distinct from the Secret Garden below."
+    },
+    {
+        "id": "secret-garden",
+        "name": "Secret Garden",
+        "shortDescription": "A hidden corner of the grounds at the center of the Royal Summer mystery — a bare circle where flowers will not grow, a silver bell, and a forgotten music box.",
+        "images": ["secret_garden_purple_rose_mystery", "royal_pups_and_the_secret_garden", "royal_tea_party_investigation"],
+        "associatedResidents": [],
+        "relatedStorySeries": ["royal-summer"],
+        "notes": "Matches Episode Two's synopsis closely. A fourth image from the same source folder, a \"locket mystery\" picture, is held out of this location's gallery — see DECISIONS_AND_GAPS.md, the word \"locket\" appears nowhere in the story text."
+    },
+    {
+        "id": "hidden-ballroom",
+        "name": "Hidden Ballroom",
+        "shortDescription": "A long-sealed ballroom behind a secret portrait, discovered and restored across Episodes Four through Six.",
+        "images": ["hidden_ballroom_royal_warning", "wagglesworth_hidden_ballroom", "royal_pups_descend_hidden_staircase", "puppy_princesses_descend_hidden_ballroom", "lady_rosalind_secret_portrait"],
+        "associatedResidents": ["lady-rosalind"],
+        "relatedStorySeries": ["royal-summer"],
+        "notes": "This art genuinely spans three episodes rather than one — see DECISIONS_AND_GAPS.md — so it lives here at the location level rather than being forced into a single episode's passage."
+    },
+    {
+        "id": "grand-ballroom",
+        "name": "Grand Ballroom",
+        "shortDescription": "The restored Hidden Ballroom, opened for the Enchanted Silver Rose Ball in Episode Six.",
+        "images": ["enchanted_ballroom_before_silver_rose_doors", "ladies_in_royal_ball_gowns", "plush_court_before_silver_rose", "whimsical_royal_ballroom", "royal_court_of_the_glowing_rose", "royal_ball_before_silver_doors", "baroness_silver_rose_ball_reminder"],
+        "associatedResidents": ["baroness-wagglesworth"],
+        "relatedStorySeries": ["royal-summer"],
+        "notes": "Episode Five's synopsis describes the hidden ballroom being restored and the ball announced there; Episode Six is the ball itself. The story text supports this being the same space, not two separate rooms — needs Barb's confirmation to state as fact."
+    },
+    {
+        "id": "pool-cabana",
+        "name": "Pool / Cabana",
+        "shortDescription": "Where the Baroness and Tilly relax during the Ladies-in-Waiting's home leave.",
+        "images": ["baroness_and_tilly_poolside_retreat"],
+        "associatedResidents": ["baroness-wagglesworth", "tilly"],
+        "relatedStorySeries": ["royal-summer"],
+        "notes": "Matches Episode Three's synopsis directly."
+    },
+    {
+        "id": "baronesss-rooms",
+        "name": "Baroness's Rooms",
+        "shortDescription": "The Baroness's private chambers, including her vanity.",
+        "images": ["royal_vanity_getting_ready", "baroness_and_buttons_royal_bedroom"],
+        "associatedResidents": ["baroness-wagglesworth", "buttons"],
+        "relatedStorySeries": [],
+        "notes": ""
+    },
+    {
+        "id": "high-tea-room",
+        "name": "High Tea Room",
+        "shortDescription": "Where the household gathers indoors for tea and gossip.",
+        "images": ["rainy_royal_gossip_tea_party", "buttons_and_lady_esme_gossip_tea"],
+        "associatedResidents": ["buttons", "esme"],
+        "relatedStorySeries": [],
+        "notes": ""
+    },
+    {
+        "id": "grand-drawing-room",
+        "name": "Grand Drawing Room",
+        "shortDescription": "A formal room of the Estate, reserved for future stories and artwork.",
+        "images": [],
+        "associatedResidents": [],
+        "relatedStorySeries": [],
+        "notes": "No image in either archive is clearly identifiable as this room specifically. Left without art rather than guessed — a genuinely empty, schema-ready location, per the design document's future-expansion model."
+    }
+]

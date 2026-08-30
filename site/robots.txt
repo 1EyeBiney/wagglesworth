@@ -1,0 +1,7 @@
+# Wagglesworth Estate is live at a shareable link but not yet announced for
+# search engines — Barb has not approved that step. See DECISIONS_AND_GAPS.md
+# and site/_data/site.json ("goLiveToSearchEngines"). This file and the
+# per-page noindex meta tag are the one switch: when she says go, set
+# goLiveToSearchEngines to true and remove the Disallow line below.
+User-agent: *
+Disallow: /

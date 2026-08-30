@@ -1,0 +1,16 @@
+{
+  "name": "wagglesworth-estate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wagglesworth Estate — Barb's storybook site. Created by Barb.",
+  "scripts": {
+    "images": "node tools/build-images.js",
+    "build": "npm run images && eleventy",
+    "start": "npm run images && eleventy --serve",
+    "check": "node tools/check.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "sharp": "^0.35.0"
+  }
+}

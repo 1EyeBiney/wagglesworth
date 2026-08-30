@@ -1,0 +1,286 @@
+[
+    {
+        "id": "baroness-wagglesworth",
+        "name": "Baroness Wagglesworth",
+        "group": "main-household",
+        "status": "confirmed",
+        "featured": true,
+        "officialTitle": "Her Grace, the Baroness Wagglesworth",
+        "givenName": "Grace",
+        "role": "Host of the Estate and its leading personality; welcomes every visitor at the front gates",
+        "portraitImage": "baroness_wagglesworth_solo_ballroom",
+        "galleryImages": ["baroness_wagglesworth_solo_ballroom", "royal_court_of_baroness_wagglesworth", "baroness_wagglesworth_royal_assembly", "royal_vanity_getting_ready", "baroness_silver_rose_ball_reminder"],
+        "confirmedNotes": [
+            "Her given name is Grace, per story_manifest.md's character notes.",
+            "Welcomes visitors at the front gates in a short, punchy, snarky/funny voice.",
+            "Receives the most elaborate profile of any resident.",
+            "Seasonal entrance outfits may change without changing who she is."
+        ],
+        "needsConfirmation": [
+            "Exact appearance reference and immutable visual traits",
+            "Formal title wording beyond Baroness",
+            "Favorite things, sayings, and relationship details"
+        ]
+    },
+    {
+        "id": "buttons",
+        "name": "Buttons",
+        "group": "main-household",
+        "status": "confirmed",
+        "featured": false,
+        "officialTitle": "Head of Royal Security",
+        "role": "Core resident and Head of Royal Security",
+        "portraitImage": "buttons_and_petunia_morning_chat",
+        "galleryImages": ["buttons_and_petunia_morning_chat", "buttons_and_lady_esme_ballroom_portrait", "core_household_gilded_ballroom", "buttons_and_lady_esme_gossip_tea", "baroness_and_buttons_royal_bedroom", "buttons_and_forbidden_crown_key"],
+        "confirmedNotes": [
+            "Holds the title Head of Royal Security, per story_manifest.md's character notes.",
+            "Core resident with story and bedroom material in the recovered inventory."
+        ],
+        "needsConfirmation": [
+            "Personality, appearance lock, relationships, favorite things"
+        ]
+    },
+    {
+        "id": "petunia",
+        "name": "Petunia",
+        "group": "main-household",
+        "status": "confirmed",
+        "featured": false,
+        "role": "Core resident, also appearing as \"Tiny Petunia\" in some material",
+        "portraitImage": "buttons_and_petunia_morning_chat",
+        "galleryImages": ["buttons_and_petunia_morning_chat"],
+        "confirmedNotes": [
+            "Core resident; \"Tiny Petunia\" is described as a very small doll in the Silver Rose Ball material and elsewhere.",
+            "Treated as one character with a size variant rather than two separate residents — see DECISIONS_AND_GAPS.md; reversible if Barb says otherwise."
+        ],
+        "needsConfirmation": [
+            "Whether Tiny Petunia is a nickname, a variant, or a genuinely separate character depiction",
+            "Appearance and personality lock"
+        ]
+    },
+    {
+        "id": "esme",
+        "name": "Lady Esme",
+        "group": "main-household",
+        "status": "confirmed",
+        "featured": false,
+        "role": "Core resident; a tiny Yorkie, per story_manifest.md",
+        "portraitImage": "buttons_and_lady_esme_ballroom_portrait",
+        "galleryImages": ["buttons_and_lady_esme_ballroom_portrait", "core_household_gilded_ballroom", "buttons_and_lady_esme_gossip_tea"],
+        "confirmedNotes": [
+            "Named as a core resident in the V2 planning history.",
+            "A tiny Yorkie, per story_manifest.md's character notes."
+        ],
+        "needsConfirmation": [
+            "All other biography and visual-continuity fields"
+        ]
+    },
+    {
+        "id": "tilly",
+        "name": "Countess Tilly Toodlefluff",
+        "group": "main-household",
+        "status": "confirmed",
+        "featured": false,
+        "officialTitle": "Chief of Paw-Operations",
+        "role": "Core resident, appears with the Baroness in porch-swing and poolside material",
+        "portraitImage": "countess_tilly_royal_procession",
+        "galleryImages": ["countess_tilly_royal_procession", "royal_noodles_clan_portrait", "baroness_and_tilly_porch_swings", "baroness_and_tilly_poolside_retreat", "countess_tilly_guards_mysterious_key"],
+        "confirmedNotes": [
+            "Full name and title Chief of Paw-Operations, per story_manifest.md's character notes.",
+            "Appears with Baroness Wagglesworth in porch-swing and poolside material."
+        ],
+        "needsConfirmation": [
+            "Personality, appearance lock, relationships"
+        ]
+    },
+    {
+        "id": "piper",
+        "name": "Lady Piper Lynn",
+        "group": "ladies-in-waiting",
+        "status": "confirmed",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "lady_piper_and_lady_siren_royal_guardians",
+        "galleryImages": ["lady_piper_and_lady_siren_royal_guardians", "rainy_royal_gossip_tea_party"],
+        "confirmedNotes": ["Individual and paired artwork with Lady Siren exists in the V2 inventory.", "Named among the ten Ladies-in-Waiting in story_manifest.md."],
+        "needsConfirmation": ["Title, role, personality, appearance lock"]
+    },
+    {
+        "id": "siren",
+        "name": "Lady Siren LeeAnn",
+        "group": "ladies-in-waiting",
+        "status": "confirmed",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "lady_piper_and_lady_siren_royal_guardians",
+        "galleryImages": ["lady_piper_and_lady_siren_royal_guardians"],
+        "confirmedNotes": ["Individual/paired royal artwork with Lady Piper is recorded.", "Named among the ten Ladies-in-Waiting in story_manifest.md."],
+        "needsConfirmation": ["Title, role, personality, appearance lock"]
+    },
+    {
+        "id": "astrid",
+        "name": "Lady Astrid",
+        "group": "ladies-in-waiting",
+        "status": "confirmed",
+        "role": "One of the ten Ladies-in-Waiting; the subject of \"Lady Astrid and the Palace Correction\"",
+        "portraitImage": "lady_astrid_royal_procession",
+        "galleryImages": ["lady_astrid_royal_procession"],
+        "confirmedNotes": ["Individual royal artwork recorded in V2.", "Has her own standalone story (10_astrid_roller_skates)."],
+        "needsConfirmation": ["Title, role, personality, appearance lock"]
+    },
+    {
+        "id": "virginia",
+        "name": "Lady Virginia",
+        "group": "ladies-in-waiting",
+        "status": "confirmed",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "lady_virginia_garden_tea",
+        "galleryImages": ["lady_virginia_garden_tea"],
+        "confirmedNotes": ["Individual royal artwork recorded in V2, in a garden/tea setting.", "Provides refreshments in the badminton story."],
+        "needsConfirmation": ["Title, role, personality, appearance lock"]
+    },
+    {
+        "id": "isla",
+        "name": "Lady Isla",
+        "group": "ladies-in-waiting",
+        "status": "confirmed",
+        "role": "One of the ten Ladies-in-Waiting; sings in the Rose Garden",
+        "portraitImage": "lady_isla_moonlit_royal_ride",
+        "galleryImages": ["lady_isla_moonlit_royal_ride"],
+        "confirmedNotes": ["Sings in the Rose Garden in Episode Two.", "Related artwork found in V2, Scottish-themed portrait."],
+        "needsConfirmation": ["Full title, personality, appearance lock, relationship details"]
+    },
+    {
+        "id": "special-sparkle",
+        "name": "Lady Special Sparkle",
+        "group": "ladies-in-waiting",
+        "status": "confirmed",
+        "role": "One of the ten Ladies-in-Waiting, known for her glitter gown in Episode Four",
+        "portraitImage": "lady_special_sparkle_royal_ride",
+        "galleryImages": ["lady_special_sparkle_royal_ride"],
+        "confirmedNotes": ["Individual royal artwork recorded in V2.", "Her glitter gown is a specific plot detail in Episode Four."],
+        "needsConfirmation": ["Exact public display name/title and all biography fields"]
+    },
+    {
+        "id": "hobson",
+        "name": "Lady Hobson",
+        "group": "ladies-in-waiting",
+        "status": "placement_to_confirm",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "lady_noodles_hobson_royal_courtyard_ride",
+        "galleryImages": ["lady_noodles_hobson_royal_courtyard_ride"],
+        "alsoKnownAs": "Noodles Hobson",
+        "confirmedNotes": [
+            "Individual royal artwork recorded in V2, captioned \"Lady Noodles Hobson.\"",
+            "Named \"Noodles Hobson\" among the ten Ladies-in-Waiting in story_manifest.md.",
+            "Displayed here as \"Lady Hobson\" rather than \"Noodles Hobson\" because the Baroness's own base identity is separately named Noodles (see story 07) — a real naming collision flagged in DECISIONS_AND_GAPS.md for Barb, not resolved by guessing. This display choice is easy to change."
+        ],
+        "needsConfirmation": ["Correct directory group, title, pronouns, role, appearance lock", "Which display name Barb actually wants used publicly"]
+    },
+    {
+        "id": "dame-muriel",
+        "name": "Dame Muriel",
+        "group": "ladies-in-waiting",
+        "status": "placement_to_confirm",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "dame_muriel_royal_evening_ride",
+        "galleryImages": ["dame_muriel_royal_evening_ride"],
+        "confirmedNotes": ["Individual royal artwork recorded in V2, evening portrait."],
+        "needsConfirmation": ["Correct directory group, role, personality, appearance lock"]
+    },
+    {
+        "id": "moira",
+        "name": "Lady Moira Ann",
+        "group": "ladies-in-waiting",
+        "status": "placement_to_confirm",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "lady_moira_and_lady_lexie_royal_companions",
+        "galleryImages": ["lady_moira_and_lady_lexie_royal_companions", "rainy_royal_gossip_tea_party"],
+        "confirmedNotes": [
+            "Named among the ten Ladies-in-Waiting in story_manifest.md.",
+            "Had no character-bible record at all in V3 — added here per DECISIONS_AND_GAPS.md, mirroring the existing pattern used for Hobson and Dame Muriel rather than inventing a new one."
+        ],
+        "needsConfirmation": ["Title, role, personality, appearance lock, relationships"]
+    },
+    {
+        "id": "lexie",
+        "name": "Lady Lexie Marie",
+        "group": "ladies-in-waiting",
+        "status": "placement_to_confirm",
+        "role": "One of the ten Ladies-in-Waiting",
+        "portraitImage": "lady_moira_and_lady_lexie_royal_companions",
+        "galleryImages": ["lady_moira_and_lady_lexie_royal_companions", "rainy_royal_gossip_tea_party"],
+        "confirmedNotes": [
+            "Named among the ten Ladies-in-Waiting in story_manifest.md.",
+            "Had no character-bible record at all in V3 — added here per DECISIONS_AND_GAPS.md, mirroring the existing pattern used for Hobson and Dame Muriel rather than inventing a new one."
+        ],
+        "needsConfirmation": ["Title, role, personality, appearance lock, relationships"]
+    },
+    {
+        "id": "lady-rosalind",
+        "name": "Lady Rosalind",
+        "group": "special-guest",
+        "status": "confirmed",
+        "role": "Connected to the secret portrait, the hidden staircase, and the hidden ballroom throughout the Royal Summer Series",
+        "portraitImage": "lady_rosalind_secret_portrait",
+        "galleryImages": ["lady_rosalind_secret_portrait"],
+        "confirmedNotes": ["Connected to the secret portrait, mysterious key, hidden staircase, and hidden ballroom storyline across Episodes Four, Five, and Six."],
+        "needsConfirmation": ["Exact story role, relationship history, appearance lock"]
+    },
+    {
+        "id": "lulabelly",
+        "name": "Lulabelly",
+        "group": "friends-and-family",
+        "status": "placement_to_confirm",
+        "role": "Appears in tea and travel material",
+        "portraitImage": "lulabelly_garden_tea_party",
+        "galleryImages": ["lulabelly_garden_tea_party", "lulabelly_travel_tea_comic"],
+        "confirmedNotes": ["Tea and travel scenes exist in the recovered inventory."],
+        "needsConfirmation": ["Correct group, title, role, personality, appearance lock"]
+    },
+    {
+        "id": "queso",
+        "name": "Queso",
+        "group": "friends-and-family",
+        "status": "asset_missing",
+        "role": "Appears in a Valentine's story with the Baroness",
+        "portraitImage": null,
+        "galleryImages": [],
+        "confirmedNotes": ["A Baroness and Queso asset was on the V2 missing-assets list and remains unlocated.", "Appears in story 16, the Queso Valentine story."],
+        "needsConfirmation": ["Character bible details and original artwork"]
+    },
+    {
+        "id": "keady",
+        "name": "Keady",
+        "group": "friends-and-family",
+        "status": "asset_missing",
+        "role": "A large male brown bear named after Gene Keady, pronounced \"Katie\"; joins the household in story 18",
+        "portraitImage": null,
+        "galleryImages": [],
+        "confirmedNotes": [
+            "A large male brown bear named after Gene Keady; his name is pronounced \"Katie,\" per story_manifest.md's character notes.",
+            "Keady/Silly Chair material was on the missing-assets list and remains unlocated."
+        ],
+        "needsConfirmation": ["Correct group, further biography, and original artwork"]
+    },
+    {
+        "id": "dad",
+        "name": "Dad",
+        "group": "friends-and-family",
+        "status": "confirmed",
+        "role": "Appears under his familiar story name",
+        "portraitImage": null,
+        "galleryImages": [],
+        "confirmedNotes": ["Use the familiar story name publicly rather than a full real name."],
+        "needsConfirmation": ["Which stories and photos are approved for public use"]
+    },
+    {
+        "id": "uncle-chris",
+        "name": "Uncle Chris",
+        "group": "friends-and-family",
+        "status": "confirmed",
+        "role": "Appears under his familiar story name",
+        "portraitImage": null,
+        "galleryImages": [],
+        "confirmedNotes": ["Use the familiar story name publicly rather than a full real name."],
+        "needsConfirmation": ["Which stories and photos are approved for public use"]
+    }
+]

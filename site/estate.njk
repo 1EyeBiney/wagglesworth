@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+title: Welcome
+description: You've entered Wagglesworth Estate. Find your way to stories, residents, the map, and the gallery.
+permalink: /estate/
+---
+<h1>Welcome to the Estate</h1>
+<p>
+    You have made it past the gates. Wagglesworth Estate spreads out before you —
+    stories, residents, gardens, and at least one room nobody has fully explained yet.
+    Where would you like to go first?
+</p>
+
+{% set newest = collections.stories | selectattr("data.newestAdventure") | first %}
+{% if newest %}
+<section aria-labelledby="newest-adventure-heading" class="card" style="margin: var(--space-3) 0;">
+    <h2 id="newest-adventure-heading">Newest Adventure</h2>
+    <p><a href="{{ newest.url }}"><strong>{{ newest.data.title }}</strong></a></p>
+    {% if newest.data.summary %}<p>{{ newest.data.summary }}</p>{% endif %}
+</section>
+{% endif %}
+
+<nav aria-label="Explore the Estate">
+    <div class="card-grid">
+        <div class="card">
+            <h3><a href="/stories/">Stories</a></h3>
+            <p>Every adventure, told in series and by category, in the order they happen.</p>
+        </div>
+        <div class="card">
+            <h3><a href="/residents/">Meet the Residents</a></h3>
+            <p>The Baroness and her whole household, the Ladies-in-Waiting, and friends of the Estate.</p>
+        </div>
+        <div class="card">
+            <h3><a href="/map/">Explore the Estate</a></h3>
+            <p>An illustrated map of the grounds — the Rose Garden, the Hidden Ballroom, and more.</p>
+        </div>
+        <div class="card">
+            <h3><a href="/gallery/">Estate Gallery</a></h3>
+            <p>Portraits, everyday moments, and scenes from every tale.</p>
+        </div>
+        <div class="card">
+            <h3><a href="/ai-adventure/">Creating Your Own Noodles Adventure with AI</a></h3>
+            <p>A beginner's guide to making your own plush-character stories, with real prompts.</p>
+        </div>
+    </div>
+</nav>

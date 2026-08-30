@@ -1,0 +1,48 @@
+{
+    "name": "Wagglesworth Estate",
+    "creatorCredit": "Created by Barb",
+    "originCopy": "The stories began in an online Facebook community.",
+    "footerLine": "Welcome to Wagglesworth Estate — where every day deserves a little royal nonsense.",
+    "colors": {
+        "royalPurple": "#5B2C83",
+        "softPink": "#E8B7CF",
+        "silver": "#A7A9AC",
+        "cream": "#FFF8E8",
+        "ink": "#2B2030"
+    },
+    "primaryNav": [
+        { "label": "Stories", "url": "/stories/" },
+        { "label": "Meet the Residents", "url": "/residents/" },
+        { "label": "Explore the Estate", "url": "/map/" },
+        { "label": "Estate Gallery", "url": "/gallery/" },
+        { "label": "Creating Your Own Noodles Adventure with AI", "url": "/ai-adventure/" },
+        { "label": "About", "url": "/about/" }
+    ],
+    "utilityNav": [
+        { "label": "Accessibility", "url": "/accessibility/" },
+        { "label": "Privacy", "url": "/privacy/" },
+        { "label": "Site Map", "url": "/sitemap/" }
+    ],
+    "storyCollections": [
+        { "id": "everyday-adventures", "label": "Everyday Adventures" },
+        { "id": "tales-from-the-estate", "label": "Tales from Wagglesworth Estate" },
+        { "id": "holidays-and-special-events", "label": "Holidays & Special Events" },
+        { "id": "parties-and-balls", "label": "Parties & Balls" },
+        { "id": "trips-and-outings", "label": "Trips & Outings" }
+    ],
+    "galleryCategories": [
+        { "id": "characters", "label": "Characters" },
+        { "id": "everyday-adventures", "label": "Everyday Adventures" },
+        { "id": "tales-from-the-estate", "label": "Tales from Wagglesworth Estate" },
+        { "id": "special-events", "label": "Special Events" },
+        { "id": "behind-the-scenes", "label": "Behind-the-Scenes / Reference Images" }
+    ],
+    "residentGroups": [
+        { "id": "main-household", "label": "Main Household" },
+        { "id": "ladies-in-waiting", "label": "Ladies-in-Waiting" },
+        { "id": "friends-and-family", "label": "Friends & Family" },
+        { "id": "special-guest", "label": "Special / Guest Characters" }
+    ],
+    "searchEnabled": true,
+    "goLiveToSearchEngines": false
+}

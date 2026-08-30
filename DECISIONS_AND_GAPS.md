@@ -143,6 +143,56 @@ character bible requires for a profile (appearance, personality, relationships, 
 appear only within their own story's text, exactly as written, with nothing added.
 Revisit if Barb wants profiles built once she supplies the missing facts.
 
+## Flagged: "Buttons" is drawn as two different character designs
+
+Writing alt text required actually looking at all 53 images (the seed script alone
+could not produce honest alt text — see the images.json alt-text pass in PROGRESS.md).
+That closer look found a real character-continuity break the manifest's text fields
+don't surface: in `royal_court_of_baroness_wagglesworth.png`, the figure named "Buttons"
+on screen is a tabby cat, while every other image showing Buttons (the ballroom
+portraits, the morning-chat scene, the Mysterious Key and Silver Rose Ball sequences)
+draws him as a cream teddy bear in a tartan kilt. The character bible's own continuity
+rule (preserve species/type/face/fur across approved references) means one of these is
+wrong, or the Royal Court image was an earlier, superseded design. **Not resolved
+here** — flagged for Barb, who is the only one who can say which design is Buttons.
+Interim choice: the teddy-bear design is treated as canonical (it appears in five of
+six Main_Cast images and matches his `Head of Royal Security`/kilt description
+elsewhere), and `royal_court_of_baroness_wagglesworth` is placed in the general
+Wagglesworth_Estate gallery rather than on Buttons's own profile page.
+
+## Flagged: an image caption names different characters than its own metadata tag
+
+`buttons_and_lady_esme_gossip_tea.png` is tagged in the manifest as depicting Buttons
+and Lady Esme, but the caption text legible within the image itself names the three
+gossiping figures as Special Sparkle, Hobson, and Dame Muriel — gossiping *about*
+Buttons, who is not shown. The alt text was written from what is actually visible in
+the image, not the manifest's tag, which is the honest choice, but the manifest tag
+itself is likely wrong and worth Barb's correction.
+
+## Flagged: a possible near-duplicate pair
+
+`enchanted_ballroom_before_silver_rose_doors.png` and `ladies_in_royal_ball_gowns.png`
+both depict the same silver-doors "reveal" beat with the same characters and the same
+sound-effect text. They are not byte-duplicates (different checksums, so the earlier
+dedupe pass correctly did not merge them), but they may be two renders/crops of the
+same generated moment rather than two distinct scenes. Both are kept — removing either
+without Barb's say-so risks discarding a real, distinct image — but flagged so she can
+decide if one is redundant.
+
+## Flagged: sourceType may be wrong for several "recovered/early" images
+
+The automated seed script guessed `sourceType` from file extension alone (JPEG = photo,
+everything else = illustration). Actually looking at the images during the alt-text
+pass found this is too blunt: `Making_Buckeyes_with_Cuddly_Helpers.png` is visibly a
+real photograph (real hands, a real kitchen) despite being a PNG, and several
+`Wagglesworth_Estate/` and `Early_Stories/` images use a photorealistic "costumed pet
+photography" style distinct from the painterly illustration style used throughout
+`Royal_Summer_Series/`. **Not corrected here** — a `sourceType` value is a provenance
+claim (design doc §8 requires it per published image) and should not be reset without
+Barb confirming which of these are real photographs of the actual plush toys versus
+AI-generated images; guessing wrongly in either direction would misstate provenance,
+which the design document treats as seriously as the no-invented-canon rule.
+
 ## Not a gap: seasonal entrances and most map-location art
 
 No seasonal-entrance package exists in either archive, and no location has dedicated

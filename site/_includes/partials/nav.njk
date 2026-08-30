@@ -1,0 +1,27 @@
+<header class="site-header">
+    <div class="site-header__inner">
+        <p><a href="/estate/"><strong>{{ site.name }}</strong></a></p>
+        <nav class="primary-nav" aria-label="Primary">
+            <ul>
+                {% for item in site.primaryNav %}
+                <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <nav class="utility-nav" aria-label="Utility">
+            <ul>
+                {% for item in site.utilityNav %}
+                <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+                {% endfor %}
+                <li>
+                    <div class="text-size-control" role="group" aria-label="Text size">
+                        <button type="button" data-action="decrease" aria-label="Decrease text size">A−</button>
+                        <button type="button" data-action="reset" aria-label="Reset text size">Reset</button>
+                        <button type="button" data-action="increase" aria-label="Increase text size">A+</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="text-size-announcer" class="visually-hidden" role="status" aria-live="polite"></div>

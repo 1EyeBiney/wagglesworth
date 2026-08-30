@@ -1,0 +1,57 @@
+/* Design tokens: the site's whole palette lives here, and nowhere else, so the
+   prohibited-color validator only has one file to check for a gold slipping in
+   (tools/checks/prohibited-terms.js scans built CSS output for gold-family
+   values). Never add a color outside this file — see CLAUDE.md and
+   DECISIONS_AND_GAPS.md: this rule governs the design system, not story prose,
+   which may legitimately describe gold-colored props. */
+
+:root {
+    /* Wagglesworth Estate palette (site_blueprint.json) */
+    --royal-purple: #5B2C83;
+    --royal-purple-dark: #3E1D5A;
+    --soft-pink: #E8B7CF;
+    --silver: #A7A9AC;
+    --cream: #FFF8E8;
+    --ink: #2B2030;
+
+    /* Semantic roles built from the palette above */
+    --color-bg: var(--cream);
+    --color-surface: #FFFFFF;
+    --color-text: var(--ink);
+    --color-text-muted: #5A4F5C;
+    --color-heading: var(--royal-purple-dark);
+    --color-accent: var(--royal-purple);
+    --color-accent-soft: var(--soft-pink);
+    --color-border: var(--silver);
+    --color-link: var(--royal-purple-dark);
+    --color-link-visited: #4A2560;
+
+    /* Focus and status colors chosen for contrast, not decoration — a visible
+       focus ring is a non-negotiable per CLAUDE.md and must never be
+       suppressed for appearance's sake. */
+    --color-focus-ring: #2B2030;
+    --focus-ring-width: 3px;
+
+    /* Type scale. A serif display face for headings only, at large sizes,
+       per the design document; body and controls stay a highly readable
+       sans-serif. Both are system-stack fonts on purpose — no web font
+       licensing question, no render-blocking network request, and no risk
+       of a font swap breaking the text-size control. */
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+
+    --radius: 0.5rem;
+    --max-content-width: 68ch;
+    --max-page-width: 72rem;
+
+    /* The A-/A+/Reset control multiplies this rather than setting an absolute
+       size, so it composes with the user's own browser zoom instead of
+       fighting it. */
+    --text-scale: 1;
+}

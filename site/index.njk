@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.name }}</title>
+    <meta name="description" content="Enter Wagglesworth Estate: a royal-storybook world of stories, residents, and artwork. Created by Barb.">
+    {% if not site.goLiveToSearchEngines %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#gate-content">Skip to main content</a>
+    {# The front gates are deliberately their own minimal moment, not the full
+       site chrome: no primary nav yet (the visitor hasn't entered), no
+       newest-adventure preview (design doc §4: "no newest-story preview
+       before entry"), no autoplay of anything. #}
+    <main id="gate-content" class="front-gates">
+        {% include "partials/silver-rose.njk" %}
+        <h1>{{ site.name }}</h1>
+        <p style="max-width: 40ch; font-size: 1.15rem;">
+            Her Grace, Baroness Wagglesworth, welcomes you — finally — to Wagglesworth
+            Estate. Wipe your paws. Mind the roses. And whatever you do, do not sit in
+            my chair.
+        </p>
+        <p><a class="button" href="/estate/">Enter Wagglesworth Estate</a></p>
+    </main>
+</body>
+</html>

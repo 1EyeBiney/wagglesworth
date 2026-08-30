@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+---
+<article class="story-page">
+    <header>
+        {% if seriesName %}<p class="story-page__eyebrow">{{ seriesName }} · Episode {{ episodeNumber }}</p>{% endif %}
+        <h1>{{ title }}</h1>
+        {% if summary %}<p class="story-page__summary">{{ summary }}</p>{% endif %}
+    </header>
+
+    {% if heroImage %}
+    {% set hero = images | byId(heroImage) %}
+    {% if hero %}
+    <figure>
+        <img src="/assets/img/{{ hero.id }}-960.webp" alt="{{ hero.altText }}"
+             {% if hero.altTextStatus != 'approved' %}data-alt-status="{{ hero.altTextStatus }}"{% endif %}
+             width="960" height="{{ (960 * hero.height / hero.width) | round }}">
+        {% if hero.caption %}<figcaption>{{ hero.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    {% endif %}
+
+    <div class="story-body">
+        {{ content | safe }}
+    </div>
+
+    {% if galleryImages and galleryImages.length %}
+    <section aria-labelledby="story-gallery-heading">
+        {% include "partials/silver-rose.njk" %}
+        <h2 id="story-gallery-heading">More scenes from this story</h2>
+        <div class="card-grid">
+            {% for imgId in galleryImages %}
+            {% set img = images | byId(imgId) %}
+            {% if img %}
+            <figure class="card">
+                <img src="/assets/img/{{ img.id }}-480.webp" alt="{{ img.altText }}" width="480" height="{{ (480 * img.height / img.width) | round }}" loading="lazy">
+                {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
+            </figure>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <nav class="story-page__prevnext" aria-label="Story navigation">
+        <ul style="list-style:none; display:flex; justify-content:space-between; padding:0;">
+            <li>
+                {% if previousStory %}
+                <a href="{{ previousStory.url }}" rel="prev">← {{ previousStory.data.title }}</a>
+                {% endif %}
+            </li>
+            <li><a href="/stories/">All Stories</a></li>
+            <li>
+                {% if nextStory %}
+                <a href="{{ nextStory.url }}" rel="next">{{ nextStory.data.title }} →</a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</article>

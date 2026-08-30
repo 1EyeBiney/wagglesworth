@@ -1,0 +1,14 @@
+<footer class="site-footer">
+    <div class="site-footer__inner">
+        {% include "partials/silver-rose.njk" %}
+        <p>{{ site.footerLine }}</p>
+        <p>{{ site.creatorCredit }}. {{ site.originCopy }}</p>
+        <nav aria-label="Footer">
+            <ul class="primary-nav">
+                {% for item in site.utilityNav %}
+                <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</footer>
