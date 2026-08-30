@@ -168,3 +168,13 @@ centralizing the choice (raster width suffix vs. bare `.svg`) so every template 
 one function instead of six templates each growing their own conditional.
 
 `npm run build` and `npm run check` both still pass clean with the new art in place.
+
+## Caught: derivatives were being committed to git
+
+The .gitignore pattern for built image derivatives said `assets/img/derived/`, which
+never matched the actual build output path (`site/assets/img/`), so 109 regenerable
+WebP and SVG files had been committed across the last three commits before this was
+noticed and fixed. Untracked with `git rm --cached` (files stay on disk, still
+rebuilt by `npm run images`); the old blobs remain in git history rather than being
+rewritten, since history-rewriting is a destructive operation outside this run's
+authority — a minor, harmless inefficiency in an otherwise small repo, not a blocker.
