@@ -1,0 +1,99 @@
+WAGGLESWORTH ESTATE WEBSITE — CLAUDE CODE HANDOFF PROMPT
+
+You are building the first production-ready version of the Wagglesworth Estate website from the ZIP archives and files in this workspace.
+
+Begin by inspecting and extracting all supplied ZIP files into separate clearly named working folders. Do not modify, rename, overwrite, recompress, or delete the original ZIP files. Treat the full Noodles Website Assets V2 archive as the preserved source-asset collection, the V2 Supplement as earlier supporting documentation, and Wagglesworth Estate V3 as the newest design and development authority. Where documents conflict, follow V3 and record the conflict in a short DECISIONS_AND_GAPS.md file.
+
+Before writing the website, create an inventory of:
+
+1. Story files and story series, including episode order.
+2. Original photographs and generated illustrations.
+3. Characters and approved names.
+4. Estate locations.
+5. Gallery and seasonal assets.
+6. Missing, duplicated, unidentified, or unapproved material.
+
+Use checksums to identify duplicate assets. Preserve original images unchanged and create optimized web derivatives separately. Never guess which character, story, or scene an unidentified image belongs to. If the supplied archives do not contain the collected story text or the expected full-resolution V2 artwork, stop after the inventory and clearly report exactly what is missing before attempting to fabricate replacement content.
+
+Read these V3 files first:
+
+- README.md
+- Documentation/Conceptual_Website_Design_Document_Draft_1.md
+- Documentation/Character_Bible_Draft_1.md
+- Documentation/Creating_Your_Own_Noodles_Adventure_with_AI_Plan.md
+- Developer_Files/site_blueprint.json
+- Developer_Files/characters.json
+- Developer_Files/decision_log.json
+- Developer_Files/high_priority_asset_register.json
+- Developer_Files/tutorial_prompts.json
+
+CORE PRODUCT REQUIREMENTS
+
+- The public name is Wagglesworth Estate. Never use “Noodleverse” in public-facing copy, metadata, routes, or interface labels.
+- Credit the project as “Created by Barb.” The About page should say only that the stories began in an online Facebook community.
+- The visual direction is elegant royal estate plus whimsical illustrated storybook.
+- Use royal purple, soft pink, silver, and cream. Absolutely no gold, gold gradients, champagne gold, or yellow-metal ornament.
+- Use the Silver Rose as the permanent crest and a subtle repeating motif.
+- Stories, characters, and artwork are equally important.
+- Accessibility is a foundation. Target WCAG 2.2 AA and implement semantic structure, keyboard navigation, visible focus, screen-reader support, responsive reflow, useful alt text, reduced-motion behavior, sufficient contrast, and a working A− / A+ / Reset text-size control.
+- Do not autoplay music or audio.
+- Do not add comments, a guestbook, accounts, a Facebook button, an admin system, or audio narration in the initial release.
+- Do not invent character biography, relationships, appearance traits, titles, sayings, or story events. Unknown information must remain marked for confirmation.
+
+SITE STRUCTURE
+
+Build these primary destinations:
+
+1. Home / Front Gates
+2. Stories
+3. Meet the Residents
+4. Explore the Estate
+5. Estate Gallery
+6. Creating Your Own Noodles Adventure with AI
+7. About
+8. Accessibility, Privacy, and Site Map utility pages
+
+The opening experience should show the front gates/exterior with Baroness Wagglesworth welcoming visitors in a short, punchy, funny voice. The primary action is “Enter Wagglesworth Estate.” Do not show a newest-story preview before entry. After entry, provide clear paths to the main areas and a data-driven Newest Adventure feature.
+
+Use an illustrated overhead Estate map with semantic, keyboard-accessible named hotspots. Every location must also be reachable through accessible page structure. On small screens, use a simplified map plus named destination cards; do not require precision tapping, dragging, or pinching.
+
+Organize stories by series and category rather than by date. Keep multi-part stories together in episode order. Use title-led archive views, one readable column on story pages, scene artwork near the matching passage, an optional end gallery, and deterministic Previous/Next controls. Search must search stories only.
+
+Group the resident directory into Main Household, Ladies-in-Waiting, Friends & Family, and Special/Guest Characters. Baroness appears first and receives the featured profile. Do not automatically show every story appearance on character pages in the first release.
+
+The Estate Gallery must support Characters, Everyday Adventures, Tales from Wagglesworth Estate, Special Events, and Behind-the-Scenes/Reference Images. Every published image needs a descriptive filename, dimensions, provenance/source type, public-use approval, caption where useful, and contextual alt text.
+
+Seasonal entrance scenes may change the background, Baroness’s outfit, welcome line, and one gentle animation. They must preserve the same navigation, labels, focus order, contrast, and layout. Honor reduced-motion preferences and provide a static fallback.
+
+TECHNICAL APPROACH
+
+First inspect the existing workspace and choose a maintainable stack appropriate for the available files. Prefer a statically deployable, content-driven architecture unless the workspace already establishes another stack. Keep stories and tutorials in Markdown/MDX and structured records in validated JSON, YAML, or an equivalent typed format. Use stable IDs and slugs. Make residents, stories, locations, galleries, and seasonal entrances data-driven so future additions do not require duplicating page code.
+
+Create a clean project README with setup, development, build, content-addition, image-processing, accessibility-testing, and deployment instructions. Include schemas or validation for structured content. Add automated checks for broken internal links, missing required metadata, missing alt text, invalid episode ordering, duplicate IDs/slugs, and prohibited gold color tokens.
+
+WORK PHASES
+
+Phase 1 — Inventory and gap report
+- Extract and inspect the archives without changing the originals.
+- Produce ASSET_AND_CONTENT_INVENTORY.md and DECISIONS_AND_GAPS.md.
+- Confirm whether story text and full-resolution V2 artwork are present.
+- Identify the hardware-store, Episode Six, and newest Silver Rose assets when available; never substitute screenshots for originals.
+
+Phase 2 — Architecture and content model
+- Establish the site structure, schemas, routes, design tokens, responsive image pipeline, and accessibility baseline.
+- Map recovered stories and assets to records without inventing metadata.
+
+Phase 3 — Core implementation
+- Build the front-gate experience, main landing page, story archive/pages, residents, Estate map/location pages, gallery, beginner AI section, About, and utility pages.
+- Use polished placeholders only where a required original asset is genuinely absent, and label those gaps in development documentation rather than presenting invented material as canon.
+
+Phase 4 — Verification
+- Run the complete build, tests, content validation, link checks, and accessibility checks.
+- Manually verify keyboard navigation, focus order, browser zoom/reflow, reduced motion, forced colors/high contrast, responsive layouts, and representative screen-reader flows.
+- Confirm there is no public “Noodleverse” terminology and no gold anywhere in the design tokens or supplied UI assets.
+
+Phase 5 — Handoff
+- Provide a concise completion report containing what was built, how to run it, how Barb can add a story or asset later, known gaps, and recommended next steps.
+- Do not claim completion while required story text or source artwork is missing. Clearly separate launch blockers from optional future enhancements.
+
+Start with Phase 1. Do not immediately generate the entire site until you have inspected the supplied material and documented any gaps.
