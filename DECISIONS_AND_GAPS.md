@@ -1,0 +1,153 @@
+# Decisions and gaps
+
+The permanent record of every V2/V3 conflict and every real content gap, per CLAUDE.md.
+Read this before assuming something is missing that was already resolved. Entries are
+either a **Decision** (made, and binding on Phase 3 onward) or a **Flagged** item
+(genuinely unresolved, needs Barb or Brian, must not be guessed around).
+
+## Document authority actually used
+
+No conflicts were found between `site_blueprint.json`, `decision_log.json`, and
+`Conceptual_Website_Design_Document_Draft_1.md` — the three agree on every point they
+both cover, and the design document simply carries more implementation detail (schemas,
+a recommended story record shape, exact contrast/touch-target numbers) than the JSON
+summaries do. Both were treated as authoritative; the design document filled gaps, it
+did not override anything.
+
+**Decision:** `Wagglesworth_Estate_Design_Document_Draft_1.docx` was not opened. V3's
+own README describes the `.md` files as "editable source documents" and the `.docx` as
+a "polished combined handoff" derived from them — i.e., an export, not an independent
+source. If a future pass finds the `.docx` actually diverges from the `.md` files, that
+is a real gap to log here, not something this pass silently assumed away.
+
+`website_asset_inventory.csv` is a plain CSV export of the same 53 records in
+`asset_manifest.json` — checked row-for-row equivalent, not a second source.
+
+## Decision: "no gold" governs design, not story prose
+
+The rule is a design-system rule — palette, generated art, UI chrome — not a content
+filter. Several stories legitimately mention gold-colored props as plot details: a
+gold-edged invitation and gold dust (story 14), a golden key that is a recurring plot
+object across Episodes Three, Four, and Five, golden light from a chandelier (Episode
+Five), and Baroness Wagglesworth's own "gold-plated marshmallow holder" running joke
+(story 23). None of this is touched, censored, or reworded. The prohibited-terms
+validator checks CSS custom properties, SVG fill/stroke values, and design tokens for
+gold-family hex values — it must never scan story body text for the word "gold," or it
+will flag content that was never in violation.
+
+## Decision: generated stand-in art, per Brian's explicit instruction
+
+CLAUDE_CODE_START_HERE.txt's default (Phase 3) calls for labeled placeholder frames
+where an original is absent. Brian overrode this before the run started: absent
+originals get an authored original SVG illustration instead, in the approved palette,
+never imitating the painterly PNG style, never inventing scene details the story text
+does not itself describe. Every one is logged in GENERATED_ART.md, marked
+`"provenance": "generated-stand-in"` in `data/images.json`, and swappable the moment a
+real original surfaces. This applies to: the Silver Rose crest itself (which should be
+vector regardless of any gap), the three P0 absences, and the four unlocated legacy
+images below, wherever a page genuinely needs an image to exist to be complete.
+
+## Flagged: three P0 artworks confirmed absent (from the V3 register, re-verified)
+
+- Hardware-store illustration for story 08. Not present in either archive.
+- Episode Six "eavesdropping" art (Plush Puppies Eavesdrop at Her Grace's Door /
+  Poodle Secrets Behind the Royal Door). Not present.
+- Newest Silver Rose ball material (royal-ball twirl, Tiny Petunia at the ball,
+  additional tea-party/palace scenes). Not present.
+
+Each gets a generated stand-in per the decision above, in
+`Assets/High_Priority_Additions/{Hardware_Store,Episode_Six,Silver_Rose}/`, which stays
+the designated drop zone for the real artwork if it is ever found.
+
+## Flagged: four unlocated legacy images (from V2's own MISSING_ASSETS.txt, re-verified absent)
+
+Baroness & Queso; UNO Day/Suspicion (story 17 has full text, no art); Silly Chair; early
+Keady-specific artwork. Same treatment: generated stand-in, logged, swap-ready.
+
+## Flagged: a locket subplot with no textual home
+
+`Lady_Noodles_Locket_Mystery.png` depicts a "locket mystery" per its own manifest tag,
+but the word "locket" does not appear anywhere in the 30 restored stories. The other
+three images in the same V2 folder (`01_Secret_Garden_and_Locket`) do fit the garden
+mystery in Episodes One and Two by content (searched and confirmed: both episodes
+contain real garden/rose/circle/bell/music-box text matching the folder's other three
+images). **Decision:** those three go in the Episode One/Two end gallery as
+series-level art, not forced into a specific passage. The locket image is held out of
+the Stories section entirely for this launch — it may belong to material the
+restoration did not carry forward, and inventing a passage for it would be exactly the
+guessing CLAUDE.md forbids. It can go in the general gallery under
+Behind-the-Scenes/Reference with a caption noting the unconfirmed subplot, or wait for
+Barb's word. Recommend the gallery placement; final call is hers.
+
+## Flagged: Royal Summer Series art folder 3 spans three episodes, not one
+
+`03_Secret_Portrait_and_Hidden_Ballroom`'s "Lady Rosalind" and "hidden ballroom" material
+cannot be pinned to a single episode: text search confirms Rosalind and the hidden
+ballroom are both mentioned across Episodes Four, Five, *and* Six — this is a
+throughline, not a one-episode scene. **Decision:** these five images are placed in the
+Royal Summer Series' shared end gallery (reachable from all three episode pages) rather
+than hard-anchored inside one episode's passage text, which is the honest reading of
+what the source material actually supports.
+
+## Flagged: Moira and Lexie have no character-bible record
+
+Two of the ten Ladies-in-Waiting named explicitly in `story_manifest.md`'s character
+notes — Lady Moira Ann and Lady Lexie Marie — have a paired portrait in V2
+(`Lady_Moira_and_Lady_Lexie_Royal_Companions.png`, confirmed in the manifest) but no
+entry in `characters.json` at all, unlike the other eight Ladies. **Decision:** give
+both a minimal `placement_to_confirm` record identical in shape to the existing Hobson
+and Dame Muriel entries (group: Ladies-in-Waiting; confirmed: individual/paired artwork
+exists; everything else to-confirm) — this mirrors a pattern V3 already uses for
+exactly this situation rather than inventing a new one, and adds no fact the source
+material doesn't support.
+
+## Flagged: naming collision — "Noodles Hobson" vs. "Noodles" as the Baroness's own name
+
+Story 07 ("How Noodles Became Baroness Wagglesworth") establishes that the Baroness's
+own base identity is named Noodles — the name the whole story world is built around.
+`story_manifest.md`'s ten-Ladies-in-Waiting list separately names one lady-in-waiting
+"Noodles Hobson," and one V2 image is captioned "Lady Noodles Hobson." These are
+evidently two different individuals in the source material, but displaying a
+lady-in-waiting as "Noodles Hobson" on a public page a few clicks from the Baroness's
+own "Noodles" origin story risks real reader confusion. **Not resolved here** — this is
+a display-name question for Barb, not a fact to invent an answer to. Interim choice for
+launch: display her as "Lady Hobson" (dropping the shared first name) in navigation and
+headings, with "also known as Noodles Hobson" noted in the profile body so the source
+material's actual name is not hidden, and the character record's `id` field stays
+`hobson` regardless of whatever display name Barb ultimately picks.
+
+## Decision: three facts elevated from "needs confirmation" to confirmed
+
+`story_manifest.md`'s "Character notes used in this edition" section is source material
+Barb's own restoration process produced, not a guess — so these move from the
+character bible's "to confirm" list to confirmed, sourced explicitly to that file:
+Baroness Wagglesworth's given name is Grace; Countess Tilly Toodlefluff holds the title
+"Chief of Paw-Operations"; Buttons the Bear holds the title "Head of Royal Security."
+
+## Flagged: "Tiny Petunia" — nickname or separate depiction?
+
+The character bible already marks this unresolved and this pass found nothing to
+resolve it: Petunia appears as a normal-sized resident in some material and as "Tiny
+Petunia" (explicitly "a very small doll") in the Silver Rose Ball material and story 24.
+**Decision for launch, reversible:** treated as one character (`petunia`) with a noted
+variant, not two separate profiles — the safer error, since merging two truly distinct
+characters is much easier to undo later than having publicly launched two profiles for
+what turns out to be one doll.
+
+## Flagged: three uncharacterized one-story names
+
+Echo and Straxx (story 24, "The Great Peanut Butter Incident") and "Lady" (story 30,
+met in Florida) are named once each, with no artwork and none of the fields the
+character bible requires for a profile (appearance, personality, relationships, etc).
+**Decision:** no dedicated resident profile for any of the three at launch — they
+appear only within their own story's text, exactly as written, with nothing added.
+Revisit if Barb wants profiles built once she supplies the missing facts.
+
+## Not a gap: seasonal entrances and most map-location art
+
+No seasonal-entrance package exists in either archive, and no location has dedicated
+art beyond what a story or gallery image happens to depict. Both are schema-ready
+(`data/seasonal.json` ships empty; `data/locations.json` is built from
+`site_blueprint.json`'s location list, illustrated only where a real image already
+depicts that place) — this is the "future expansion" the design document describes
+happening by data record, not a launch blocker.
