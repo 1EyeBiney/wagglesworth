@@ -70,14 +70,5 @@
         "associatedResidents": ["buttons", "esme"],
         "relatedStorySeries": [],
         "notes": ""
-    },
-    {
-        "id": "grand-drawing-room",
-        "name": "Grand Drawing Room",
-        "shortDescription": "A formal room of the Estate, reserved for future stories and artwork.",
-        "images": [],
-        "associatedResidents": [],
-        "relatedStorySeries": [],
-        "notes": "No image in either archive is clearly identifiable as this room specifically. Left without art rather than guessed — a genuinely empty, schema-ready location, per the design document's future-expansion model."
     }
 ]

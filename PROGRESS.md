@@ -221,3 +221,38 @@ instead of a raw `npx serve _site`, which no longer matches the built hrefs.
 Rebuilt, re-ran `npm run check` clean, pushed, watched the GitHub Actions run to
 completion, and confirmed in the browser that the live site now loads styled with
 working navigation.
+
+## Session 2, August 30, 2026: Barb's first review round (fixes1)
+
+Barb reviewed the live site and sent seven fixes plus five images in a `fixes1/`
+drop folder (now gitignored as reference, like `_source/`). The headline: three of
+her images are the **real original artwork** for exactly the three gaps the
+generated stand-ins were covering — the hardware-store storybook page, the Queso
+Valentine scene, and a snow-day scene — so this round completed the swap
+GENERATED_ART.md promised: real art in (copied to
+`assets/originals/Fixes1_2026-08-30/` with clean names, full metadata and
+looked-at-the-image alt text in images.json), all three stand-in SVGs and records
+deleted, hero images repointed in `tools/generate-stories.js` and the stories
+regenerated. The received "snow noodles.jpeg" is internally a PNG; the tracked copy
+is named `.png` to match, noted in its record.
+
+The other changes: Baroness portrait added to the front gate; Grand Drawing Room
+removed from the map; Petunia's profile switched to her two new solo portraits;
+Lady Hobson's name and picture confirmed by Barb (needsConfirmation cleared);
+and all ten Ladies-in-Waiting removed from the public site — implemented as
+`unlisted` flags plus a filtered `site/_data/publicResidents.js` read by every
+public surface, rather than deleting records, so story cross-references survive
+and the whole thing reverses by removing ten flags. Barb's item 4 (fix Hobson) and
+item 5 (remove all Ladies-in-Waiting) genuinely conflicted; Brian resolved it as
+remove-all-ten, recorded in ISSUES.md and DECISIONS_AND_GAPS.md.
+
+One near-miss worth remembering: the first draft of the map-location template used
+a `(array.push(x), array)` comma-expression inside `{% set %}` — not valid
+Nunjucks, the same family of template-engine assumption that caused the selectattr
+bug. Caught before build and replaced with a real `byIds` Eleventy filter.
+
+`npm run build` (clean `_site/` rebuild — Eleventy doesn't delete outputs for
+removed pages, so the ten profile pages and the drawing-room page needed a fresh
+output dir) and `npm run check` both clean; verified in the built output: zero
+stand-in references, 11 public resident profiles, no drawing room, portrait on the
+gate, new hero images on all three stories.

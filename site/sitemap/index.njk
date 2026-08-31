@@ -28,7 +28,7 @@ description: Every section of Wagglesworth Estate.
 
 <h2>Every resident</h2>
 <ul>
-    {% for resident in residents %}
+    {% for resident in publicResidents %}
     <li><a href="{{ ('/residents/' + resident.id + '/') | url }}">{{ resident.name }}</a></li>
     {% endfor %}
 </ul>

@@ -47,15 +47,16 @@
         "status": "confirmed",
         "featured": false,
         "role": "Core resident, also appearing as \"Tiny Petunia\" in some material",
-        "portraitImage": "buttons_and_petunia_morning_chat",
-        "galleryImages": ["buttons_and_petunia_morning_chat"],
+        "portraitImage": "petunia_portrait_garden",
+        "galleryImages": ["petunia_portrait_garden", "petunia_portrait_tea"],
         "confirmedNotes": [
             "Core resident; \"Tiny Petunia\" is described as a very small doll in the Silver Rose Ball material and elsewhere.",
-            "Treated as one character with a size variant rather than two separate residents — see DECISIONS_AND_GAPS.md; reversible if Barb says otherwise."
+            "Treated as one character with a size variant rather than two separate residents — see DECISIONS_AND_GAPS.md; reversible if Barb says otherwise.",
+            "Solo portraits supplied by Barb, first review round (fixes1), Aug 30 2026, replacing the shared Buttons-and-Petunia picture on her profile."
         ],
         "needsConfirmation": [
             "Whether Tiny Petunia is a nickname, a variant, or a genuinely separate character depiction",
-            "Appearance and personality lock"
+            "Personality lock (appearance now has Barb-supplied reference portraits)"
         ]
     },
     {
@@ -97,6 +98,7 @@
         "id": "piper",
         "name": "Lady Piper Lynn",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "lady_piper_and_lady_siren_royal_guardians",
@@ -108,6 +110,7 @@
         "id": "siren",
         "name": "Lady Siren LeeAnn",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "lady_piper_and_lady_siren_royal_guardians",
@@ -119,6 +122,7 @@
         "id": "astrid",
         "name": "Lady Astrid",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting; the subject of \"Lady Astrid and the Palace Correction\"",
         "portraitImage": "lady_astrid_royal_procession",
@@ -130,6 +134,7 @@
         "id": "virginia",
         "name": "Lady Virginia",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "lady_virginia_garden_tea",
@@ -141,6 +146,7 @@
         "id": "isla",
         "name": "Lady Isla",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting; sings in the Rose Garden",
         "portraitImage": "lady_isla_moonlit_royal_ride",
@@ -152,6 +158,7 @@
         "id": "special-sparkle",
         "name": "Lady Special Sparkle",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting, known for her glitter gown in Episode Four",
         "portraitImage": "lady_special_sparkle_royal_ride",
@@ -163,7 +170,8 @@
         "id": "hobson",
         "name": "Lady Hobson",
         "group": "ladies-in-waiting",
-        "status": "placement_to_confirm",
+        "unlisted": true,
+        "status": "confirmed",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "lady_noodles_hobson_royal_courtyard_ride",
         "galleryImages": ["lady_noodles_hobson_royal_courtyard_ride"],
@@ -171,14 +179,15 @@
         "confirmedNotes": [
             "Individual royal artwork recorded in V2, captioned \"Lady Noodles Hobson.\"",
             "Named \"Noodles Hobson\" among the ten Ladies-in-Waiting in story_manifest.md.",
-            "Displayed here as \"Lady Hobson\" rather than \"Noodles Hobson\" because the Baroness's own base identity is separately named Noodles (see story 07) — a real naming collision flagged in DECISIONS_AND_GAPS.md for Barb, not resolved by guessing. This display choice is easy to change."
+            "Displayed as \"Lady Hobson\"; this display name and her portrait picture were approved by Barb in the first review round (fixes1), Aug 30 2026 — the naming-collision question in DECISIONS_AND_GAPS.md is resolved."
         ],
-        "needsConfirmation": ["Correct directory group, title, pronouns, role, appearance lock", "Which display name Barb actually wants used publicly"]
+        "needsConfirmation": []
     },
     {
         "id": "dame-muriel",
         "name": "Dame Muriel",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "placement_to_confirm",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "dame_muriel_royal_evening_ride",
@@ -190,6 +199,7 @@
         "id": "moira",
         "name": "Lady Moira Ann",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "placement_to_confirm",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "lady_moira_and_lady_lexie_royal_companions",
@@ -204,6 +214,7 @@
         "id": "lexie",
         "name": "Lady Lexie Marie",
         "group": "ladies-in-waiting",
+        "unlisted": true,
         "status": "placement_to_confirm",
         "role": "One of the ten Ladies-in-Waiting",
         "portraitImage": "lady_moira_and_lady_lexie_royal_companions",

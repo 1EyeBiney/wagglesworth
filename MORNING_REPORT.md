@@ -1,7 +1,13 @@
 # Morning report — Wagglesworth Estate
 
-Session 1, August 29-30, 2026. The full Phases 1-5 build ran to completion, deployed,
-and was verified against the actual live URL (not just a local build).
+Sessions 1-2, August 29-30, 2026. The full Phases 1-5 build ran to completion,
+deployed, and was verified against the actual live URL (not just a local build).
+**Session 2 then applied Barb's entire first review round** (the seven fixes and five
+images from `fixes1/`): her real original artwork replaced all three generated
+stand-ins, her portrait now greets visitors at the front gate, Petunia has her new
+solo portraits, the Grand Drawing Room is off the map, Lady Hobson's name and picture
+are confirmed, and the Ladies-in-Waiting are removed from Meet the Residents
+(reversibly — see DECISIONS_AND_GAPS.md). Details in ISSUES.md's Done section.
 
 ## The live site
 
@@ -36,6 +42,11 @@ question.
    "Welcome to the Estate," then "Newest Adventure," then five section headings
    (Stories, Meet the Residents, Explore the Estate, Estate Gallery, Creating Your Own
    Noodles Adventure with AI) — all at the same heading level, no level skipped.
+   Then do the same on **Meet the Residents**: with the Ladies-in-Waiting removed,
+   the page should read as three clean group headings (Main Household, Friends &
+   Family, Special / Guest Characters) with no empty section and no orphaned links.
+   Also confirm the front gate now announces the Baroness's portrait image before
+   the site name — real alt text, not a filename.
 3. **Open a story page and use the text-size control** (A−, Reset, A+ in the header).
    Confirm NVDA announces the new percentage each time you press one, and that
    reloading the page keeps your last chosen size.
@@ -57,13 +68,11 @@ Three files hold everything that needs her judgment, not a developer's:
   voice (the front-gate welcome and the Estate landing intro), both still marked
   draft. Each has two alternative versions if she wants a different flavor. Nothing
   in either line states a new fact about her — approve, edit, or replace at will.
-- **[GENERATED_ART.md](GENERATED_ART.md)** — four pieces of original stand-in
-  illustration (the Silver Rose crest, plus three story-page scenes for gaps where no
-  real artwork exists: the hardware store, a Valentine's still life, a snow-day/UNO
-  scene). None depict a character's face or body — deliberately, since two of the
-  characters those stories center on don't have a confirmed appearance yet. Each is
-  swap-ready the moment a real original surfaces — see the file for the two-step swap
-  process.
+- **[GENERATED_ART.md](GENERATED_ART.md)** — good news here: all three stand-in
+  scenes are gone, replaced by the real artwork Barb sent in the fixes1 folder. The
+  only generated piece left in use is the Silver Rose crest (vector by design, never
+  a stand-in). Worth a quick look from her to confirm the three real images landed on
+  the right stories.
 - **[DECISIONS_AND_GAPS.md](DECISIONS_AND_GAPS.md)** — the full record of every
   judgment call made without her, and everything genuinely unresolved. The ones that
   most need her word, not a developer's:
@@ -71,23 +80,24 @@ Three files hold everything that needs her judgment, not a developer's:
     tabby cat in one, a cream teddy bear everywhere else) — the teddy-bear design was
     treated as canonical for launch since it's the overwhelming majority, but only she
     can say which one is actually right.
-  - **The "Noodles Hobson" / "Noodles" naming collision** — the Baroness's own base
-    identity is named Noodles (her origin story), and a separate lady-in-waiting is
-    also named "Noodles Hobson" in the source material. She's displayed as "Lady
-    Hobson" for launch to avoid confusing readers, with her full name noted in her own
-    profile. Barb may want a different display name entirely.
+  - **Does the Queso Valentine artwork establish Queso's appearance?** The real
+    Valentine image she sent shows a cream teddy bear (and a small doll) beside the
+    Baroness. If that bear is Queso, say so and his profile can finally get a
+    portrait — until she confirms, the image's description deliberately doesn't name
+    them, since Queso's appearance was never established in the source material.
   - **A locket-mystery image with no matching story text** — held out of the Stories
     section rather than forced into a passage that doesn't mention it; recommended
     placement is the general gallery with a note, but it's her call.
-  - **Three P0 artworks and four legacy images remain genuinely absent** (the
-    hardware-store scene, Episode Six's "eavesdropping" material, the newest Silver
-    Rose ball material, plus four smaller unlocated pieces) — each has a
-    swap-ready stand-in per GENERATED_ART.md, and a designated drop-zone folder if the
-    real originals are ever found.
+  - **Still genuinely absent** (smaller now, after her fixes1 artwork filled three
+    gaps): Episode Six's "eavesdropping" material, the newest Silver Rose ball
+    material, the "Silly Chair" image, and the early Keady artwork. None ever had
+    stand-ins; drop-zone folders stay ready if any surface.
+  - ~~The "Noodles Hobson" naming collision~~ — **resolved**: Barb confirmed "Lady
+    Hobson" and her picture in fixes1 (her record is currently unlisted with the
+    rest of the Ladies-in-Waiting, but the confirmation is saved).
   - A handful of smaller flagged items (a caption that names different characters than
     its own image tag, a possibly-duplicate image pair, guessed `sourceType` values on
-    several older images, two Ladies-in-Waiting with no character-bible record) are
-    all listed in full in the file, none blocking launch.
+    several older images) are all listed in full in the file, none blocking launch.
 
 ## Launch blockers vs. everything else
 

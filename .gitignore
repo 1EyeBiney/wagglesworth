@@ -8,6 +8,12 @@
 # Actions builds the site and needs the real files, not just this local folder).
 _source/
 
+# Raw drop folders from Barb's review rounds: her feedback notes and image
+# files exactly as received, reference only, like _source/. The images get
+# copied into assets/originals/ (with clean ASCII filenames) before use —
+# the drop folder itself is never modified and never committed.
+fixes1/
+
 # Node
 node_modules/
 

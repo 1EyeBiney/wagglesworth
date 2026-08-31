@@ -202,6 +202,13 @@ main { display: block; }
 }
 .front-gates h1 { color: var(--cream); }
 .front-gates .button { font-size: 1.25rem; padding: var(--space-2) var(--space-4); }
+.front-gates__portrait {
+    max-width: min(20rem, 70vw);
+    height: auto;
+    border: 3px solid var(--silver);
+    border-radius: var(--radius);
+    margin: var(--space-2) 0;
+}
 
 /* ---------- reduced motion ---------- */
 /* Honored globally: any future animation must be wrapped so it is disabled

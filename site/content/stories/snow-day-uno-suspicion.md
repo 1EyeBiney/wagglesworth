@@ -5,7 +5,7 @@ order: 16
 primaryCollection: "everyday-adventures"
 characters: ["baroness-wagglesworth", "buttons", "petunia"]
 summary: "Baroness, Buttons, and Petunia play UNO while Mom works; Buttons suspects everyone of cheating."
-heroImage: "uno_snow_day_stand_in"
+heroImage: "snow_noodles"
 permalink: "/stories/snow-day-uno-suspicion/"
 ---
 

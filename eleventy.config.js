@@ -54,6 +54,18 @@ module.exports = function (eleventyConfig) {
         return (records || []).find(function (r) { return r.id === id; }) || null;
     });
 
+    // The records whose id appears in ids, in the ids' own order. Used to
+    // resolve a location's associatedResidents against publicResidents, so
+    // unlisted residents (see site/_data/publicResidents.js) drop out
+    // silently instead of rendering a link to a profile page that no longer
+    // exists.
+    eleventyConfig.addFilter('byIds', function (records, ids) {
+        var list = records || [];
+        return (ids || [])
+            .map(function (id) { return list.find(function (r) { return r.id === id; }); })
+            .filter(function (r) { return !!r; });
+    });
+
     // Nunjucks' selectattr only supports a single truthy-attribute test, not
     // Jinja2's ("attr", "equalto", value) form - passing the extra arguments
     // is silently ignored rather than erroring, so `images | selectattr(

@@ -39,6 +39,31 @@ to this file as issues arise and moves resolved items to a Done section with a n
 
 ## Done
 
+### Barb's first review round (fixes1/, Aug 30 2026)
+
+All seven items from `fixes1/Noodles website fixees.txt`, plus the five images she
+supplied with them:
+
+1. Baroness portrait added to the front gate (`/`) — her existing ballroom portrait,
+   per Brian's choice of page ("main page" was ambiguous between the gate and the
+   estate landing).
+2. Grand Drawing Room removed from Explore the Estate (see DECISIONS_AND_GAPS.md).
+3. Petunia's profile now uses her two new solo portraits (garden full-length as the
+   main portrait, tea-room close-up in her gallery) instead of the shared
+   Buttons-and-Petunia picture.
+4. Lady Hobson's "still being confirmed" items cleared — Barb confirmed the displayed
+   name and picture (see DECISIONS_AND_GAPS.md; the naming-collision flag is
+   resolved).
+5. All ten Ladies-in-Waiting removed from the public site. **Note the conflict with
+   item 4:** Hobson is herself a Lady-in-Waiting; Brian resolved it as "remove all
+   ten, Hobson included," with her approval recorded on her (now unlisted) record.
+   Implemented reversibly via `unlisted` flags + `publicResidents.js`, not deletion
+   (see DECISIONS_AND_GAPS.md).
+6. + 7. All three generated stand-in illustrations removed from the gallery — and not
+   just removed: Barb's folder contained the real original artwork for all three gaps
+   (hardware store, Queso Valentine, snow day), so the real art now serves as those
+   stories' hero images and gallery entries, per GENERATED_ART.md's swap procedure.
+
 - Nunjucks' `selectattr` filter here doesn't support Jinja2's `("attr", "equalto",
   value)` form (it silently ignores the extra arguments and tests only truthiness) —
   this made every Estate Gallery category render all 56 images identically, and made

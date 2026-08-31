@@ -11,7 +11,7 @@ layout: layouts/base.njk
 <div class="estate-map">
     <svg viewBox="0 0 400 300" role="img" aria-labelledby="estate-map-title" aria-describedby="estate-map-desc">
         <title id="estate-map-title">Illustrated overhead map of Wagglesworth Estate</title>
-        <desc id="estate-map-desc">A stylized grounds plan showing the Main Gates at the bottom, the Grand Ballroom and Hidden Ballroom at the center, the Rose Garden and Secret Garden to either side, the Pool and Cabana, the Baroness's Rooms, the High Tea Room, and the Grand Drawing Room.</desc>
+        <desc id="estate-map-desc">A stylized grounds plan showing the Main Gates, the Grand Ballroom and Hidden Ballroom, the Rose Garden and Secret Garden, the Pool and Cabana, the Baroness's Rooms, and the High Tea Room.</desc>
         <rect width="400" height="300" fill="var(--cream)" stroke="var(--silver)"/>
         {% for loc in locations %}
         {% set gx = (loop.index0 % 3) * 130 + 20 %}

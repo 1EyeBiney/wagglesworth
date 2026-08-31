@@ -64,19 +64,27 @@ images below, wherever a page genuinely needs an image to exist to be complete.
 ## Flagged: three P0 artworks confirmed absent (from the V3 register, re-verified)
 
 - Hardware-store illustration for story 08. Not present in either archive.
+  **RESOLVED Aug 30 2026:** Barb supplied the real original
+  ("Noodles' Hardware Store Adventure," now `hardware_store_adventure`) in the first
+  review round (fixes1); the generated stand-in was swapped out per GENERATED_ART.md.
 - Episode Six "eavesdropping" art (Plush Puppies Eavesdrop at Her Grace's Door /
-  Poodle Secrets Behind the Royal Door). Not present.
+  Poodle Secrets Behind the Royal Door). **Still not present.**
 - Newest Silver Rose ball material (royal-ball twirl, Tiny Petunia at the ball,
-  additional tea-party/palace scenes). Not present.
+  additional tea-party/palace scenes). **Still not present.**
 
-Each gets a generated stand-in per the decision above, in
-`Assets/High_Priority_Additions/{Hardware_Store,Episode_Six,Silver_Rose}/`, which stays
-the designated drop zone for the real artwork if it is ever found.
+The two still-open items never had stand-ins (Episode Six already has seven real
+illustrations — see GENERATED_ART.md's "Not generated, and why"); their drop-zone
+folders remain designated for real artwork if it surfaces.
 
 ## Flagged: four unlocated legacy images (from V2's own MISSING_ASSETS.txt, re-verified absent)
 
 Baroness & Queso; UNO Day/Suspicion (story 17 has full text, no art); Silly Chair; early
-Keady-specific artwork. Same treatment: generated stand-in, logged, swap-ready.
+Keady-specific artwork. Originally: generated stand-in, logged, swap-ready.
+
+**Update Aug 30 2026 (fixes1):** Barb supplied real original artwork covering the
+first two — a Queso Valentine scene (`queso_valentine`) and a snow-day scene
+(`snow_noodles`) — and both stand-ins were swapped out per GENERATED_ART.md. Silly
+Chair and the early Keady artwork remain unlocated (neither ever had a stand-in).
 
 ## Flagged: a locket subplot with no textual home
 
@@ -123,12 +131,16 @@ own base identity is named Noodles — the name the whole story world is built a
 "Noodles Hobson," and one V2 image is captioned "Lady Noodles Hobson." These are
 evidently two different individuals in the source material, but displaying a
 lady-in-waiting as "Noodles Hobson" on a public page a few clicks from the Baroness's
-own "Noodles" origin story risks real reader confusion. **Not resolved here** — this is
-a display-name question for Barb, not a fact to invent an answer to. Interim choice for
-launch: display her as "Lady Hobson" (dropping the shared first name) in navigation and
-headings, with "also known as Noodles Hobson" noted in the profile body so the source
-material's actual name is not hidden, and the character record's `id` field stays
-`hobson` regardless of whatever display name Barb ultimately picks.
+own "Noodles" origin story risks real reader confusion. Interim choice for launch was
+to display her as "Lady Hobson" (dropping the shared first name), with "also known as
+Noodles Hobson" noted in the profile body.
+
+**RESOLVED Aug 30 2026:** Barb's first review round (fixes1, item 4) confirmed the
+name and picture as displayed — "Lady Hobson" with `lady_noodles_hobson_royal_courtyard_ride`
+as her portrait. Her record's `needsConfirmation` items are cleared and her status is
+`confirmed`. (Note: in the same round, item 5 removed the whole Ladies-in-Waiting
+group from the public site — see the Decision below — so her confirmed record is
+currently unlisted, ready if the group ever returns.)
 
 ## Decision: three facts elevated from "needs confirmation" to confirmed
 
@@ -221,6 +233,41 @@ life, a snow-day/card-game motif) and never a character's face or body. Queso's 
 Keady's resident profiles stay text-only rather than getting an invented portrait —
 that is the honest representation of "appearance not yet confirmed," not a gap to be
 papered over with art.
+
+## Decision: Ladies-in-Waiting removed from the public site (Barb, fixes1 item 5)
+
+Barb's first review round asked to "remove all the ladies in waiting" from Meet the
+Residents. Her list also separately confirmed Lady Hobson's profile (item 4), which
+conflicted — Hobson is one of the ten. Brian resolved it: **remove all ten, Hobson
+included**, with her item-4 approval recorded on her record so it isn't lost.
+
+Implementation, chosen for reversibility: the ten records stay in
+`site/_data/residents.json` in full (deleting them would break story-character
+cross-references and discard real data) with `"unlisted": true` on each;
+`site/_data/publicResidents.js` filters them out, and every public surface (the
+residents directory, profile-page generation, the sitemap, map-location resident
+lists) reads that filtered list. Their gallery images remain in the Estate Gallery —
+Barb asked only about Meet the Residents — and the stories are untouched, so the
+Ladies still appear in every story exactly as written. Reversal is deleting the ten
+`unlisted` flags.
+
+## Decision: Grand Drawing Room removed from Explore the Estate (Barb, fixes1 item 2)
+
+Removed from `site/_data/locations.json` (it was an empty, schema-ready location with
+no artwork and no associated residents — nothing else referenced it) and from the
+map SVG's text description. Stories mentioning the Grand Drawing Room are untouched.
+Re-adding it later is one new record via `content/templates/location-template.json`.
+
+## Flagged: the Queso Valentine original may establish Queso's appearance
+
+The real Valentine artwork Barb supplied (`queso_valentine`, fixes1) shows the
+Baroness at the Valentine's table with a small doll in a red-and-black lace dress and
+a cream teddy bear in a heart-print vest and red bow tie. The character bible marks
+Queso's appearance as unestablished (`asset_missing`), so this image's record
+describes both companions without naming them. If Barb confirms the bear (or doll) is
+Queso, that would establish an appearance reference for the bible and Queso's profile
+could gain a portrait — her call, not one to guess. (The doll closely matches the new
+solo Petunia portraits, but the same rule applies: described, not asserted.)
 
 ## Not a gap: seasonal entrances and most map-location art
 

@@ -25,12 +25,15 @@ permalink: "/map/{{ location.id }}/"
     <p class="needs-confirmation">No artwork is clearly identified for this location yet.</p>
     {% endif %}
 
-    {% if location.associatedResidents and location.associatedResidents.length %}
+    {# Resolved against publicResidents, not residents: an unlisted resident
+       (see publicResidents.js) has no profile page to link to, so they drop
+       out here — and if none are left, the whole section drops too. #}
+    {% set visibleResidents = publicResidents | byIds(location.associatedResidents) %}
+    {% if visibleResidents | length %}
     <h2>Who you'll usually find here</h2>
     <ul>
-        {% for rid in location.associatedResidents %}
-        {% set r = residents | byId(rid) %}
-        {% if r %}<li><a href="{{ ('/residents/' + r.id + '/') | url }}">{{ r.name }}</a></li>{% endif %}
+        {% for r in visibleResidents %}
+        <li><a href="{{ ('/residents/' + r.id + '/') | url }}">{{ r.name }}</a></li>
         {% endfor %}
     </ul>
     {% endif %}

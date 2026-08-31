@@ -8,6 +8,15 @@ painterly PNG style, and marked `"provenance": "generated-stand-in"` in
 real file into `assets/originals/`, point the relevant `heroImage`/`portraitImage`
 field at its new image id, and delete the entry below and the SVG it replaces.
 
+**Update, Aug 30 2026 (Barb's first review round, fixes1): all three story stand-ins
+have been swapped out.** Barb supplied the real original artwork for every gap they
+covered, and each swap followed the two-step process above — real file into
+`assets/originals/Fixes1_2026-08-30/`, hero image repointed in
+`tools/generate-stories.js`, stand-in record and SVG deleted. The only generated piece
+still in use is the Silver Rose crest, which was never a stand-in (see its entry
+below). The three swapped entries are kept below for the record, each marked with what
+replaced it.
+
 None of these depict a character's face, body, or design — see DECISIONS_AND_GAPS.md,
 "generated stand-ins are scenes and motifs, never new character designs." Drawing a
 character whose appearance the character bible marks unconfirmed would be inventing
@@ -24,29 +33,41 @@ form regardless of what original artwork was or wasn't available — this is the
 piece of "generated" art that isn't standing in for anything missing; it's simply
 vector by design.
 
-## Hardware store stand-in
+## Hardware store stand-in — SWAPPED OUT, Aug 30 2026
 
-**File:** `assets/originals/Generated_Stand_Ins/hardware_store_stand_in.svg`
-**Used on:** the "Noodles at the Hardware Store" story page (`heroImage`).
+**Replaced by:** `assets/originals/Fixes1_2026-08-30/hardware_store_adventure.png`
+(image id `hardware_store_adventure`), the real original artwork supplied by Barb.
+The SVG and its images.json record are deleted.
+
+**File (deleted):** `assets/originals/Generated_Stand_Ins/hardware_store_stand_in.svg`
+**Was used on:** the "Noodles at the Hardware Store" story page (`heroImage`).
 **Illustrates:** the enormous gate and the shelf of tools/concrete bags the story text
 itself describes — no characters, since the story doesn't fix a specific visual scene
 beyond these objects.
 **Replaces the gap:** the P0 hardware-store artwork listed as absent in
 `DECISIONS_AND_GAPS.md` and the V3 high-priority asset register.
 
-## Queso Valentine stand-in
+## Queso Valentine stand-in — SWAPPED OUT, Aug 30 2026
 
-**File:** `assets/originals/Generated_Stand_Ins/queso_valentine_stand_in.svg`
-**Used on:** "Baroness Wagglesworth's Queso Valentine" story page (`heroImage`).
+**Replaced by:** `assets/originals/Fixes1_2026-08-30/queso_valentine.png` (image id
+`queso_valentine`), the real original artwork supplied by Barb. The SVG and its
+images.json record are deleted.
+
+**File (deleted):** `assets/originals/Generated_Stand_Ins/queso_valentine_stand_in.svg`
+**Was used on:** "Baroness Wagglesworth's Queso Valentine" story page (`heroImage`).
 **Illustrates:** a Valentine's still life — a bowl of queso, chips, and hearts — drawn
 directly from the story's own described props. No character (Queso's own appearance is
 `asset_missing` in the character bible and is not invented here).
 **Replaces the gap:** the unlocated "Baroness & Queso" legacy artwork.
 
-## Snow day / UNO stand-in
+## Snow day / UNO stand-in — SWAPPED OUT, Aug 30 2026
 
-**File:** `assets/originals/Generated_Stand_Ins/uno_snow_day_stand_in.svg`
-**Used on:** "Snow Day Suspicion and the Great UNO Standoff" story page (`heroImage`).
+**Replaced by:** `assets/originals/Fixes1_2026-08-30/snow_noodles.png` (image id
+`snow_noodles`), the real original artwork supplied by Barb. The SVG and its
+images.json record are deleted.
+
+**File (deleted):** `assets/originals/Generated_Stand_Ins/uno_snow_day_stand_in.svg`
+**Was used on:** "Snow Day Suspicion and the Great UNO Standoff" story page (`heroImage`).
 **Illustrates:** falling snow and a fan of playing cards (given a rose motif instead of
 ordinary suits, to stay in the Estate's visual language) — an object/mood scene, no
 characters.

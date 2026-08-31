@@ -10,7 +10,7 @@ module.exports = {
         },
         description: function (data) {
             return data.resident ? data.resident.role
-                : 'The household of Wagglesworth Estate — Baroness Wagglesworth, the Ladies-in-Waiting, and friends of the family.';
+                : 'The household of Wagglesworth Estate — Baroness Wagglesworth, her household, and friends of the family.';
         }
     }
 };

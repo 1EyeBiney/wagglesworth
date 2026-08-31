@@ -4,7 +4,7 @@ layout: layouts/base.njk
 <h1>Meet the Residents</h1>
 <p>Story appearances are not listed automatically on profiles yet — that's a planned future addition, not an oversight.</p>
 
-{% set baroness = residents | byId("baroness-wagglesworth") %}
+{% set baroness = publicResidents | byId("baroness-wagglesworth") %}
 {% if baroness %}
 <section aria-labelledby="featured-heading" class="card" style="margin-bottom: var(--space-4);">
     <h2 id="featured-heading">{{ baroness.name }}</h2>
@@ -18,11 +18,16 @@ layout: layouts/base.njk
 {% endif %}
 
 {% for group in site.residentGroups %}
+{# A group with no publicly listed residents (e.g. the Ladies-in-Waiting,
+   removed at Barb's instruction — see DECISIONS_AND_GAPS.md) renders no
+   section at all, not an empty heading. #}
+{% set groupResidents = publicResidents | whereEquals("group", group.id) %}
+{% if groupResidents | length %}
 <section aria-labelledby="group-{{ group.id }}-heading">
     <h2 id="group-{{ group.id }}-heading">{{ group.label }}</h2>
     <div class="card-grid">
-        {% for resident in residents %}
-        {% if resident.group == group.id and resident.id != "baroness-wagglesworth" %}
+        {% for resident in groupResidents %}
+        {% if resident.id != "baroness-wagglesworth" %}
         <div class="card">
             <h3><a href="{{ ('/residents/' + resident.id + '/') | url }}">{{ resident.name }}</a></h3>
             {% if resident.status != "confirmed" %}<p class="needs-confirmation">Still being confirmed</p>{% endif %}
@@ -32,4 +37,5 @@ layout: layouts/base.njk
         {% endfor %}
     </div>
 </section>
+{% endif %}
 {% endfor %}

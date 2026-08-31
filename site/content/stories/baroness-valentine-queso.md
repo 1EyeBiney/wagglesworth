@@ -5,7 +5,7 @@ order: 15
 primaryCollection: "holidays-and-special-events"
 characters: ["baroness-wagglesworth", "queso"]
 summary: "The Valentine's story with chips, queso, a steak quesadilla, extra cheese, and the Baroness's \"emotionally supportive cheese.\""
-heroImage: "queso_valentine_stand_in"
+heroImage: "queso_valentine"
 permalink: "/stories/baroness-valentine-queso/"
 ---
 

@@ -19,6 +19,12 @@
        before entry"), no autoplay of anything. #}
     <main id="gate-content" class="front-gates">
         {% include "partials/silver-rose.njk" %}
+        {# Barb's fixes, round 1: her portrait greets visitors at the gate. #}
+        {% set portrait = images | byId("baroness_wagglesworth_solo_ballroom") %}
+        {% if portrait %}
+        <img class="front-gates__portrait" src="{{ portrait | imgSrc(480) }}" alt="{{ portrait.altText }}"
+             width="480" height="{{ (480 * portrait.height / portrait.width) | round }}">
+        {% endif %}
         <h1>{{ site.name }}</h1>
         <p style="max-width: 40ch; font-size: 1.15rem;">
             Her Grace, Baroness Wagglesworth, welcomes you — finally — to Wagglesworth
